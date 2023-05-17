@@ -10,7 +10,7 @@ Table of Content
   - Factorization
   - Applications
 
-- [Survey on Bi-quasiprimitive Actions and 2-arc-transitive Graphs](https://github.com/ocbaby/research_notes/blob/main/biqp_2arctrans_graph.tex)
+- [Survey on Bi-quasiprimitive Actions and 2-arc-transitive Graphs](https://github.com/ocbaby/research_notes/blob/main/biqp_2arctrans_graph.pdf)
   - Introduction
   - Quasiprimitive groups (O'Nan-Scott-Praeger Theorem)
   - s-arc-transitive graphs
