@@ -5,7 +5,7 @@ Table of Content
 ---------------
 
 - [Seminar on Almost Simple Groups with Applications](https://github.com/ocbaby/research_notes/blob/main/ASGA_worknotes.pdf)
-  - Finite simple groups (especially, exceptional Lie type)
+  - Finite simple groups (especially, exceptional Lie type)（Following GTM251）
   - Almost simple groups
   - Factorization
   - Applications
