@@ -6,6 +6,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{enumerate}
 
 
 \newtheorem{theorem}{Theorem}[theorem]
@@ -17,7 +18,23 @@
 \newtheorem{example}{Example}[theorem]
 \newtheorem{remark}{Remark}[theorem]
 
-\title{Almost Simple Groups with Applications}
+
+\def\PSL{\mathrm{PSL}}
+\def\PGL{\mathrm{PGL}}
+\def\PSU{\mathrm{PSU}}
+\def\PSp{\mathrm{PSp}}
+\def\PO{\mathrm{P\Omega}}
+\def\PSL{\mathrm{PSL}}
+\def\Aut{\mathrm{Aut}}
+\def\Inn{\mathrm{Inn}}
+\def\Out{\mathrm{Out}}
+\def\Cay{\mathrm{Cay}}
+
+
+
+
+
+\title{Notes on GTM251}
 \author{Yuandong Li}
 \date{\today}
 
@@ -27,26 +44,61 @@
 \maketitle
 
 \tableofcontents
+\newpage
 
 \section{Introduction}
-this is a note of a seminar, hello world
+\subsection{History}
+\subsection{CFSG}
+Every finite simple group is isomorphic to one of the followings:
+\begin{enumerate}[(i)]
+	\item a cyclic group $C_p$ of prime order $p$;
+	\item an alternating group $A_n$ for $n\geq 5$;
+	\item a classical group:
+		\begin{itemize}
+			\item linear: $\PSL_n(q)$, $n\geq 2$, except $\PSL_2(2)$ and $\PSL_2(3)$;
+			\item unitary: $\PSU_n(q)$, $n\geq 3$, except $\PSU_3(2)$;
+			\item symplectic: $\PSp_{2n}(q)$, $n\geq 2$, except $\PSp_4(2)$;
+			\item orthogonal: $\PO_{2n+1}(q)$, $n\geq 3$, $q$ odd; $\PO_{2n}^+(q)$, $\PO_{2n}^-(q)$, $n\geq 4$;
+		\end{itemize}
+		where $q$ is a power $p^a$ of a prime $p$;
+	\item an exceptional group of Lie type:
+		\[ G_2(q),q\geq 3;\ F_4(q);\ E_6(q);\  ^2E_6(q);\ ^3D_4(q);\ E_7(q);\ E_8(q) \] with $q$ a prime power, or\[ ^2B_2(2^{2n+1}),\  ^2G_2(3^{2n+1},\ ^2F_4(2^{2n+1}),\ n\geq 1; \]or the Tits group $^2F_4(2)'$;
+	\item one of 26 sporadic simple groups:
+		\begin{itemize}
+			\item the five Mathieu groups $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$;
+			\item the seven Leech lattice groups Co$_1$, Co$_2$, Co$_3$, McL, HS, Suz, J$_2$;
+			\item the three Fischer groups Fi$_{22}$ , Fi$_{23}$, Fi$_{24}'$ ;
+			\item the five Monstrous groups $\mathbb{M}$, $\mathbb{B}$, Th, HN, He;
+			\item the six pariahs J$_1$, J$_3$, J$_4$, O'N, Ly, Ru.
+		\end{itemize}
+\end{enumerate}
+Conversely, every group in this list is simple, and the only repetitions in this list are:
+\begin{equation*}
+\begin{aligned}
+	\PSL_2(4)\cong &\PSL_2(5)\cong A_5;\\
+	&\PSL_2(7)\cong\PSL_3(2);\\
+	&\PSL_2(9)\cong A_6;\\
+	&\PSL_4(2)\cong A_8;\\
+	&\PSU_4(2)\cong \PSp_4(3).
+\end{aligned}
+\end{equation*}
+
+introduce, construction, orders, simplicity, action(reveal subgroup structure)
+
+\subsection{App of CFSG}
+The symmetric difference set of almost simple subgroups and maximal subgroups of $A_n$ is listed out, while listing their intersection is impossible.
+
+\section{The Alternating Groups}
+\subsection{Introduction}
+$\Aut(A_n)\cong S_n$ for $n\geq 7$ but for $n=6$ there is an exceptional outer automorphism of $S_6$.
+
+subgroup structure (O'Nan-Scott Thm)
 
 
-\section{Preliminaries}
-
-\section{Primitive groups}
-% refer to Dixon, Wielandt
-\subsection{Primitivity}
-\subsection{O\'Nan-Scott Thm (5 types)}
-\subsection{Quasiprimitive \& O-S-Praeger Thm}
-
-\section{Finite simple groups}
-\subsection{intro,history,refs}
-\subsection{classes,especially excep Lie}
-
-\section{Factorization of almost simple groups}
-
-\section{Applications}
-\subsection{s-arc-transitive Cayley graphs}
 
 \end{document}
+
+
+
+
+
