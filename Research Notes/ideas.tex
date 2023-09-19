@@ -6,16 +6,32 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
+\usepackage{indentfirst}
 
 
-\newtheorem{theorem}{Theorem}[theorem]
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}[theorem]
-\newtheorem{conjecture}{Conjecture}[theorem]
-\newtheorem{definition}{Definition}[theorem]
-\newtheorem{example}{Example}[theorem]
-\newtheorem{remark}{Remark}[theorem]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{definition}{Definition}
+\newtheorem{problem}{Problem}[section]
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+
+\def\PSL{\mathrm{PSL}}
+\def\PGL{\mathrm{PGL}}
+\def\PSU{\mathrm{PSU}}
+\def\PSp{\mathrm{PSp}}
+\def\PO{\mathrm{P\Omega}}
+\def\PSL{\mathrm{PSL}}
+\def\Aut{\mathrm{Aut}}
+\def\Inn{\mathrm{Inn}}
+\def\Out{\mathrm{Out}}
+\def\Cay{\mathrm{Cay}}
+
+
 
 \title{Research Ideas on Symmetrical Graph Theory}
 \author{Yuandong Li}
@@ -30,34 +46,220 @@
 \newpage
 
 
-\section{2-transitive Cayley graphs on non-solvable groups}
-use factorization of almost simple groups
-Aut is AS?
-Aut=$G G_\alpha$, if $G_\alpha$ is solvable, then use Li_Xia. Else use both non-solvable.
-
-
-\section{normal Cayley graph or cover: Li's conjecture in 2008}
-$G\triangleleft \mathrm{Aut}(Cay(G,S))$
-solved for solvable $G$
-
+%%%%%%%%%%%%%%%%%%%%%%
 \section{construction of 2-arc-transitive non-Cayley normal cover of $K_{2^n,2^n}$}
 paper3
 
-\section{affine bi-quasiprimitive 2-arc-transitive graph}
-see Praeger, Ivanov 1993: affine (bi-)primitive 2-arc-trans graph
 
+%%%%%%%%%%%%%%%%%%%%%%
 \section{characterize locally 2-arc-transitive graphs of order $p^n$}
 paper-two
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{$\Cay(G,S)$ with $\Aut(G,S)$ 2-transitive on $S$}
+
+\begin{theorem}[Godsil,1981]
+	$N_{\Aut\Gamma}(\hat{G})=\hat{G}\rtimes \Aut(G,S)$
+\end{theorem}
+
+\begin{conjecture}[Xu, 1998]
+	Almost all Cayley graphs are normal.
+\end{conjecture}
+
+
+\begin{lemma}
+	If $\Aut(G,S)$ is s-transitive on $S$, then $\Gamma$ is $(N_{\Aut\Gamma}(\hat{G}),s)$-arc-transitive.
+\end{lemma}
+
+\begin{theorem}[Praeger,1999]
+	cubic normalizer-arc-transitive $\Cay(G,S)$ on nonab. simple $G=T$ satisfies $\Aut\Gamma=\hat{G}\rtimes \Aut(G,S)$
+\end{theorem}
+
+\begin{theorem}[Li,1998]
+	normalizer-2-arc-transitive  $\Cay(G,S)$ on nonab. char. simple $G=T^l$ satisfies $\Aut\Gamma=\hat{G}\rtimes \Aut(G,S)$
+\end{theorem}
+
+\begin{conjecture}
+	$\Gamma=\Cay(G,S)$ is connected. If $\Aut(G,S)$ is 2-transitive on $S$, then either $\Aut\Gamma=\hat{G}\rtimes \Aut(G,S)$, or $\Gamma$ is a normal cover of $\mathbf{K}_{p^e,p^e}$
+\end{conjecture}
+
+For solvable $G$, Zhou find exceptional normal cover of $\mathbf{K}_{2^f}$ with $f\geq 3$.
+
+\begin{problem}
+	nonsolvable $G$
+\end{problem}
+
+\begin{problem}
+	2-transitive $\rightarrow$ (quasi)primitive
+\end{problem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{bi-quasiprimitive 2-arc-transitive graph}
+see Praeger, Ivanov 1993: affine (bi-)primitive 2-arc-transitive graphs
+\begin{problem}
+	Generalize to (bi-)quasiprimitive 2-arc-trans. graphs
+\end{problem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{locally primitive (s-arc-transitive) Cayley graphs}
+[cyclic, dihedral, solvable, alternating, simple] 
+
+more complex $G$? bi-Cayley?
+
+\subsection{arc-transitive (bi-)Cayley graphs}
+arc-transitive Cayley graphs on T, odd prime val with solvable stabilizers
+
+Extended to bi-Cayley with same condition, while focus on bipartite
+
+Extended to bi-Cayley of bi-quasiprimitive instead of solvable stabilizer
+
+
+\begin{problem}[*]
+	Study arc-transitive bi-quasiprimitive bi-Cayley graphs on T of val=pq or $p^e$
+\end{problem}
+
+release Lemma 2.4 ($G_v$ solvable $\rightarrow$ $G_{vu}^{[1]}=1$)
+
+such that Lemma 3.3 can be extended using Li-Wang-Xia
+
+
+\subsection{s-arc-transitive solvable Cayley graphs}
+$s\leq 2$ sharply for non-bipartite
+$s\leq 4$ sharply for bipartite
+\begin{problem}[*]
+	Study locally (quasi)primitive solvable Cayley graphs.
+\end{problem}
+
+locally primitive graphs of order $p^e$ are studied by Li,Pan,Ma 2009
+
+locally primitive metacyclic normal Cayley graphs are studied by Pan 09
+
+locally primitive abelian Cayley graphs are studied by Li,Lou,Pan 2011
+
+locally primitive dihedral Cayley graphs are studied by Pan, 2014
+
+
+\subsection{s-arc-transitive Cayley graphs on non-solvable groups}
+Locally primitive (s-arc-transitive) Cayley graphs of finite simple groups is classified by Li,Wang,Xia
+
+\textbf{method:}
+
+$\bar{X}:=X/M$ quasiprimitive, reduct to AS
+
+$\bar{X}=\bar{G} \bar{X}_\alpha$, use factorization of AS groups
+
+If $\bar{G}$ or $\bar{X}_\alpha$ is solvable, then use Li-Xia. 
+
+Else both non-solvable, use Li-Wang-Xia. 
+
+\begin{problem}(*)
+	Locally primitive (s-arc-transitive) Cayley graphs on $T^l$
+\end{problem}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Weiss's Conjecture}
+
+\begin{conjecture}
+	Suppose $\Gamma = (V, E)$ is a finite undirected graph, $G\leq \Aut\Gamma$ such that G
+is vertex-transitive and locally primitive. Then $|G_x|$ is bounded by a number depending only on $|\Gamma(x)|$.
+\end{conjecture}
+
+Now, in addition, $\Gamma$ is (G,s)-transitive. Then the number of locally s-arcs divides $|G_x|$. But this bound on s is dependent on $|\Gamma(x)|$.
+
+\begin{problem}[open?]
+	bound $s\leq 3$ for $|\Gamma(x)|\geq 3$ and $G_{x,y}^{[1]}=1$.
+\end{problem}
+
+
+structure of $G_x/O_p(G_x^{[1]})$ described for arc-trans loc. qp, especially $G_x$ for arc-trans. loc. 2-trans.
+
+\begin{problem}
+	Suppose $\Gamma = (V, E)$ is a finite undirected graph, $G$ is transitive on V and s-arcs respectively with $G_{x,y}^{[1]}=1$.\\Determine the upper bound on s.
+\end{problem}
+
+s-arc-transitive graphs with $s\geq 2$ are locally-primitive.
+
+
+%%%%%%%%%%%%%%%%%%%%%%
 \section{arc-transitive locally quasiprimitive graph}
 
+Graphs mentioned here are locally finite G-graphs, i.e., vertex stabilizers $G_\alpha$ are finite.
 
+\subsection{locally quasiprimitive G-graphs}
+\begin{problem}
+	Determine the structure of $G_x$.
+\end{problem}
+
+$\because$ locally quasiprimitivity $\implies$ edge-transitivity, 
+
+$\therefore G\curvearrowright V\Delta$ has at most 2 orbits (adjacent vertices in distinct orbits).
+
+\begin{problem}
+	Bound $|G_\alpha|$ and determine amalgams $(G_\alpha,G_\beta;G_{\alpha,\beta})$
+\end{problem}
+
+\begin{itemize}
+	\item Tutte: bounded $|G_x|$ when G is vertex-transitive on finite trivalent graphs
+	\item Goldschmidt: bounded $|G_x|$ for locally finite trivalent G-graphs, determined amalgams when locally primitive
+	\item locally finite and locally s-arc transitive graphs with $s\geq 6$ in which each vertex has val$\geq 3$ the amalgams are weak BN-pairs, known.
+	\item for $s\geq 4$ a partial classification of the amalgams was recently obtained 
+\end{itemize}
+
+
+general results on the structure of $G_x$: Thompson-Wielandt Theorem.
+
+\centerline{
+G loc. fin. + loc. q-prim. + V-trans. $\mathop{\Longrightarrow}\limits^{T-W}$ $G_{x,y}^{[1]}$ is a p-group}
+
+\subsection{arc-trans. loc. q-prim. G-graphs}
+
+Now assume $\Delta$ loc. fin. + loc. q-prim. + arc-trans.
+
+
+In [19] Weiss conjectured that the order of $O_p(G_x^{[1]})$ is bounded by a function of $|\Delta(x)|$ when $G_x^\Delta$ is also a primitive permutation group on $\Delta$.
+
+\begin{problem}
+	Obtain the structure of $O_p(G_x^{[1]})$ or bound its order, assuming something on $G_x^{\Delta(x)}$ and its action.
+\end{problem}
+
+Amalgams of arc-trans. loc. 2-trans. graphs with $G_{x,y}^{[1]}\neq 1$ studied.
+
+\begin{problem}
+	Determining amalgams of arc-transitive G-graphs of a given valency. (recently)
+\end{problem}
+
+raises
+\begin{problem}
+	Study $G_x^{[1]}$ when $G_{x,y}^{[1]}= 1$, and about $G_x^{[1]}/O_p(G_x^{[1]})$ in general.
+\end{problem}
+
+This paper gives
+\begin{theorem}
+	...
+\end{theorem}
+\begin{theorem}
+	describes the structure of $G_x/O_p(G_x^{[1]})$
+\end{theorem}
+applied to obtain 
+\begin{theorem}
+	the structure of $G_x$ of a class of arc-trans. loc. fin. and loc. 2-trans. G-graphs with trivial edge kernel.
+\end{theorem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
 \section{Homogenous graphs}
 works on this area usually published on top journals such as JCTB
 \subsection{construction of TW type 3-connected homogeneous graph}
 3-ch
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%
 \section{Generalized quadrangles}
 
 
