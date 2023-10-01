@@ -70,6 +70,8 @@
 \def\PSp{\mathrm{PSp}}
 \def\PO{\mathrm{P\Omega}}
 \def\PGaL{\mathrm{P\Gamma L}}
+\def\PSigU{\mathrm{P\Sigma U}}
+\def\AGaL{\mathrm{A\Gamma L}}
 \def\Aut{\mathrm{Aut}}
 \def\Inn{\mathrm{Inn}}
 \def\Out{\mathrm{Out}}
@@ -79,8 +81,44 @@
 \def\PH{\mathcal{PH}}
 \def\GI{\mathcal{GI}}
 \def\PG{\mathrm{PG}}
+\def\soc{\mathrm{soc}}
+\def\proof#1{\textbf{Proof.}{#1}\qed}
 
 
+\def\TWthm{\begin{theorem}[2.2, Thompson-Wielandt]
+Let $\Gamma$ be a connected $(G, s)$-transitive graph with $s\geq  2$, and let $\alpha$ and $\beta$ be adjacent vertices of $\Gamma$. Then one of the following holds, where p is a prime:
+\begin{enumerate}
+	\item $s\leq 3$, $G_{\alpha\beta}^{[1]}=1$, and $G_{\alpha}^{[1]}\cong(G_{\alpha}^{[1]})^{\Gamma(\beta)}\triangleleft G_{\alpha\beta}^{\Gamma(\beta)}\cong G_{\alpha\beta}^{\Gamma(\alpha)}$;
+	\item $s\leq 3$, $G_{\alpha\beta}^{[1]}$ is a nontrivial p-group, $\PSL_d(p^f)\triangleleft G_\alpha^{\Gamma(\alpha)}$ for some $d\geq 2$, and $\val(\Gamma)=(p^{df}-1)/(p^f-1)$;
+	\item $s\geq 4$, $\PGL_2(p^f)\triangleleft G_\alpha^{\Gamma(\alpha)}$, $\val(\Gamma)=p^f+1$, and one of the following occurs:
+	\begin{enumerate}[i]
+		\item s=4, and $G_\alpha=p^{2f}:\frac{p^f-1}{(3,p^f-1)}.\PGL_2(p^f).\mathcal{O}$ with $|\mathcal{O}|\mid (3,p^f-1)f$;
+		\item s=5, and $G_\alpha=p^{3f}:\GL_2(2^f).\mathbb{Z}_e$ with $e|f$;
+		\item s=7, and $G_\alpha=(p^{2f}\times (p^f)^{1+2}):\GL_2(3^f).\mathbb{Z}_e$ with $e|f$.
+	\end{enumerate}
+\end{enumerate}
+\end{theorem}}
+
+\def\Lem2.3{\begin{lemma}[2.3]
+For a connected $(G,3)$-arc-transitive graph $\Gamma$ and adjacent vertices $\alpha,\beta$, at least one of the following holds: \footcite{LI2015331}\textsuperscript{,Thm 4.2}
+\begin{enumerate}
+	\item $G_\alpha^{[1]}$ is transitive on $\Gamma(b)\backslash\{\alpha\}$.
+	\item $G_\alpha=A_7$ or $S_7$.
+	\item $\mathbb{Z}_p^f\triangleleft G_\alpha^{\Gamma(\alpha)}\leq \AGaL_1(p^f)$ with p a prime.
+\end{enumerate}
+\end{lemma}}
+
+
+\def\Lem2.5{\begin{lemma}[2.5]
+Let $\Gamma$ be a connected $(G,s)$-transitive graph with $s\geq 3$, and suppose $N\triangleleft G$ and not semiregular. Then one of the following holds:
+\begin{enumerate}
+	\item both $G_\alpha^{\Gamma(\alpha)}$ and $N_\alpha^{\Gamma(\alpha)}$ are almost simple 2-transitive;
+	\item $G_\alpha^{\Gamma(\alpha)}$ is affine and $N_\alpha^{\Gamma(\alpha)}$ is primitive.
+\end{enumerate}
+\end{lemma}}
+
+
+\newtheorem{proposition}{Proposition}[theorem]
 
 
 %%%%%%%%%%
@@ -196,12 +234,20 @@ For short, \textbf{s-transitive} means $(\Aut\Gamma,s)$-transitive for graphs.
 \end{lemma}
 \end{frame}
 
+\begin{frame}{Preliminaries}
+\begin{definition}
+	A transitive permutation group G is said to be \\\textbf{quasiprimitive} if its nontrivial normal subgroups are transitive, and \\\textbf{bi-quasiprimitive} if its nontrivial normal subgroups have at most 2 orbits and there exists one which has exactly 2 orbits.
+\end{definition}
+
+The O'Nan-Scott-Praeger theorem \footcite{praeger_1997} divides the quasiprimitive permutation groups into 8 types: holomorph affine (HA), holomorph simple (HS), holomorph compound (HC), almost simple (AS), simple diagonal (SD), compound diagonal (CD), product action (PA) and twisted wreath product (TW).
+\end{frame}
+
 
 \begin{frame}{Background}
 \begin{itemize}
 	\item 1947, Tutte: No 6-arc-transitive trivalent graphs.
 	\item 1981, Weiss: No s-arc-transitive graphs with $\val\geq 3$ for $s=6$ and $s\geq 8$.
-	\item 2019, Li C.H. \& Xia B.Z.: \\ Connected \textbf{non-bipartite} 3-arc-transitive solvable Cayley graph with $\val\geq 3$ is a normal cover of the Hoffman-Singleton graph or the Peterson graph.
+	\item 2019, Li C.H. \& Xia B.Z.: \\ Connected \textbf{non-bipartite} 3-arc-transitive solvable Cayley graph with $\val\geq 3$ is a normal cover of the Hoffman-Singleton graph or the Petersen graph.
 	\item 2021, Zhou J.X.: No such normal covers, so $s\leq 2$ sharply.
 \end{itemize}
 
@@ -251,8 +297,12 @@ These normal covers are being investigated in a sequel. (usually challenge)
 \begin{frame}{Examples}
 (3) $\HS_{50}^{(2)}$
 \begin{itemize}
-	\item \textbf{standard double cover:} $\Gamma^{(2)}=(\tilde{V},\tilde{E})$ of $\Gamma=(V,E)$, where\\ $\tilde{V}=V\times\{1,2\}$, $\tilde{E}=\{\{(v,1),(w,2)\}\mid\{v,w\}\in E\}$
+	\item $\HS_{50}$ is 3-transitive \\$\Aut(\HS_{50})=\PSigU(3,5)$ has a solvable vertex-transitive subgroup\\ It is NOT a Cayley graph
+	\item \textbf{standard double cover:} $\Gamma^{(2)}=(\tilde{V},\tilde{E})$ of $\Gamma=(V,E)$, where\\ $\tilde{V}=V\times\{1,2\}$, $\tilde{E}=\{\{(v,1),(w,2)\}\mid\{v,w\}\in E\}$\\ $\Aut(\Gamma^{(2)})\geq \Aut\Gamma\times\langle\sigma\rangle$, $\Gamma$ s-arc-transitive $\implies$ $\Gamma^{(2)}$ s-arc-transitive
+	\item By MAGMA, $\exists_1$ connected $G$-arc-transitive 7-valent graph $\Gamma$ of order 50 with $(G,G_\alpha)=(\PSU_3(5),A_7)$ or $(\PSU_3(5).\mathbb{Z}_2,S_7)$. $\Gamma\cong \HS_{50}$
+	\item By MAGMA, $\exists_1$ connected $G$-arc-transitive 7-valent graph $\Gamma$ of order 100 with $(G,G_\alpha)=(\PSU_3(5).\mathbb{Z}_2,A_7)$. $\Gamma\cong \HS_{50}^{(2)}$
 \end{itemize}
+(\textcolor{red}{Q: Could a normal cover of $\HS_{50}^{(2)}$ be solvable Cayley?} see Zhou's paper)
 \end{frame}
 
 \begin{frame}{Examples}
@@ -260,18 +310,301 @@ These normal covers are being investigated in a sequel. (usually challenge)
 \begin{itemize}
 	\item the incidence graph of $\PG(2,q)=(\mathcal{P,L})$, where \\$\mathcal{P}$(resp. $\mathcal{L}$) is the set of 1-subspace(resp. 2-subspace) of $\mathbb{F}_q^3$
 	\item $\Aut(\PH(3,q))=\PGaL_3(q).\langle \sigma\rangle=\Aut(\PSL_3(q))$
-	\item $(\alpha_0,\cdots,\alpha_4)$ with $\alpha_0\in \mathcal{P}$ corresponds to a basis $v_1,v_2,v_3$ such that\[ \alpha_0=\langle v_1\rangle, \alpha_1=\langle v_1,v_2\rangle, \alpha_3=\langle v_2\rangle, \alpha_4=\langle v_2,v_3\rangle, \alpha_5=\langle v_3\rangle \]all ordered bases are equiv. under linear transformation\\$\implies$ 4-arc-transitive
-	\item a Cayley graph\footcite{MARUSIC2003162} of $D_{2(q^2+q+1)}$ 
+	\item $(\alpha_0,\cdots,\alpha_4)$ with $\alpha_0\in \mathcal{P}$ corresponds to a basis $v_1,v_2,v_3$ such that\[ \alpha_0=\langle v_1\rangle, \alpha_1=\langle v_1,v_2\rangle, \alpha_2=\langle v_2\rangle, \alpha_3=\langle v_2,v_3\rangle, \alpha_4=\langle v_3\rangle \]all ordered bases are equiv. under linear transformation\\$\implies$ 4-arc-transitive
+	\item a Cayley graph\footcite{MARUSIC2003162} of $D_{2(q^2+q+1)}$, for example Heawood graph.
 \end{itemize}
 \end{frame}
 
 
 \section{Proof of the Main result}
+
 \subsection{Overview of the proof}
-\subsection{Reduct to almost simple groups}
-\subsection{As case}
+
+\begin{frame}{Overview of the proof}
+	Let $\Gamma=\Cay(H,S)$ be connected, $(G,s)$-transitive, $\val\geq 3$,\\ with $H$ solvable, $H\leq G\leq \Aut\Gamma$, $s\geq 3$.
+	
+	Let $M\triangleleft G$ (may trivial) be maximal with $\geq 3$ orbits on $V\Gamma$.\\Then
+	\begin{itemize}
+		\item $\Gamma$ is a normal cover of $\Gamma_M$
+		\item $\Gamma_M$ is $(G/M,s)$-arc-transitive
+		\item $G/M$ is either quasiprimitive or bi-quasiprimitive on $V\Gamma_M$, $|V\Gamma_M|\geq 3$
+	\end{itemize}
+
+\begin{theorem}[Praeger,1993]
+Let $\Gamma$ be a finite connected graph, $G\leq \Aut\Gamma$ is s-arc transitive on $\Gamma$ for some $s\geq 2$. Suppose $N\triangleleft G$ has more than two orbits on vertices. Then\begin{enumerate}
+	\item $\Gamma_N$ is finite and connected and the group of automorphisms of $\Gamma_N$ induced by G is s-arc transitive on $\Gamma_N$.
+	\item N is semiregular on vertices (that is $N_\alpha= 1$ for each vertex $\alpha$ of $\Gamma$) and $\Gamma$ is a cover of $\Gamma_N$. 
+\end{enumerate}  
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}{Overview of the proof}
+\textbf{Case quasiprimitive:} 
+$\Gamma_M$ non-bipartite. By Li-Xia-Zhou, no such graphs.
+
+\textbf{Case bi-quasiprimitive:} $\Gamma_M$ bipartite.
+
+Then either $\Gamma_M=\mathbf{K}_{n,n}$, or $G/M$ is almost simple. \textcolor{blue}{(Reduce to AS type)}\\Moreover, $\soc(G/M)$ is a classical simple group of Lie type. \\\textcolor{blue}{(Use factorization of AS groups with a solvable factor)}
+
+\ 
+
+Let $s_0$ be the sharp upper bound on $s$.
+\begin{itemize}
+	\item By Example (4), $\PH(3,q)$ is 4-transitive, so $s_0\geq 4$.
+	\item If there is a connected 5-arc-transitive solvable Cayley graph $\Gamma$, \\ then $\Gamma$ is a normal cover of a 5-arc-transitive graph of type (1)-(4),\\ while analysis above states no such graph. 
+\end{itemize}
+Hence $s_0=4$.
+\end{frame}
+
+\subsection{Reduce to almost simple groups} 
+\begin{frame}{Reduce to almost simple groups}
+In the remains of this talk, we assume the followings.
+
+\begin{itemize}
+	\item Let $\Gamma$ be a connected bipartite $(G,s)$-transitive graphs of val$\geq 3$, with bipartitions $\Delta_1$ and $\Delta_2$ and $s\geq 3$.
+	\item Suppose $G$ is bi-quasiprimitive on $V\Gamma$ and contains a vertex-transitive solvable subgroup $H$. 
+	\item Set $G^+=G_{\Delta_1}$, the setwise stabilizer of $G$ on $\Delta_1$, and $H^+=H\cap G^+$.
+	\item Let $\alpha$, $\beta$ be adjacent vertices.
+\end{itemize}
+
+Some immediate facts:
+\begin{itemize}
+	\item $G^+=G_{\Delta_1}=G_{\Delta_2}$ has index 2 (hence normal) in $G$ and is transitive on both $\Delta_1$ and $\Delta_2$, as well as $H^+$ in $H$.
+	\item $G=\langle G^+,g\rangle$ where $g\in G\backslash G^+$, $g$ interchanges $\Delta_1$ and $\Delta_2$, $g^2\in G^+$
+\end{itemize}
+
+\end{frame}
 
 
+\begin{frame}{Case: unfaithful action}
+Now we consider the action of $G^+$ on $\Delta_1$ and $\Delta_2$.
+\begin{lemma}[4.2]
+	If $G^+$ acts unfaithfully on $\Delta_1$ or $\Delta_2$, then $\Gamma=\mathbf{K}_{n,n}$, where $n=|V\Gamma |/2$.
+\end{lemma}
+\proof{
+Let $K=\ker(G^+\curvearrowright\Delta_1)$. \\Then $K^g=\ker(G^+\curvearrowright\Delta_2)$ and $1\neq KK^g=K\times K^g\triangleleft G$.\\$\because$ $G$ is bi-quasiprimitive, $K\times K^g$ has at most 2 orbits.\\Since $K^g$ fixes $\Delta_2$ pointwise, $K$ must be transitive on $\Delta_2$.\\It follows that $\Gamma=\mathbf{K}_{n,n}$.}
+
+\ 
+
+We thus additionally assume $G^+$ is faithful on both $\Delta_1$ and $\Delta_2$.\[G^+\cong (G^+)^{\Delta_1}\cong (G^+)^{\Delta_2}\]
+We will prove the above actions are quasiprimitive of almost simple type.
+\end{frame}
+
+\begin{frame}{Quasiprimitive $\implies$ same type AS or PA}
+\begin{lemma}[4.3]
+	Suppose $G^+$ is quasiprimitive on $\Delta_1$ or $\Delta_2$. Then \begin{enumerate}
+		\item $G^+$ is quasiprimitive on both $\Delta_1$ and $\Delta_2$
+		\item both $ (G^+)^{\Delta_1}$ and $ (G^+)^{\Delta_2}$ have the same type AS or PA
+	\end{enumerate}
+\end{lemma}
+\proof{WLOG, assume $G^+$ is quasiprimitive on $\Delta_1$.\\$G$ transitive on $V\Gamma$ and $G^+\triangleleft G$ $\implies$ $G^+\curvearrowright\Delta_1$, $\Delta_2$ are perm. isom.\\Hence $G^+$ is quasiprimitive on $\Delta_2$ of the same type on $\Delta_1$.\\By ref.\footcite{GIUDICI2003analysing}\textsuperscript{,Thm 1.2}, $(G^+)^{\Delta_1}$ is of type HA, AS, TW or PA.\\For cases HA or TW, $\soc(G^+)\triangleleft G$ is regular on $\Delta_1$ and $\Delta_2$, \\then $\Gamma$ is a \textbf{G-normal bi-Cayley graph} on $\soc(G^+)$.\\By ref.\footcite{CONDER2020264}\textsuperscript{,Lem 3.2}, $\Gamma$ is at most $(G,2)$-arc-transitive, contradicting $s\geq 3$.}%\\Thereby, $G^+$ has the same type AS or PA on $\Delta_1$ and $\Delta_2$.}
+\end{frame}
+
+
+\begin{frame}{Study $\soc(G^+)$}
+\begin{lemma}[4.4]
+$\soc(G^+)$ is nonsolvable and is the the unique minimal normal subgroup of $G$, and $\soc(G^+)_\alpha\neq 1$.
+\end{lemma}
+\textbf{Proof.}{\\ If $G^+\curvearrowright\Delta_1$ is quasiprimitive. \\By lemma 4.3, $G^+$ is of type AS or PA.\\So $\soc(G^+)\mathop{\triangleleft}\limits_{min}G^+$ and is nonsolvable and not semiregular.\\ Let $C=C_G(\soc(G^+))$. Then $C\triangleleft G$ and $\soc(G^+)\cap C=Z(\soc(G^+))=1$.\\If $C\neq 1$, as $C\cap G^+=1$ and $G=G^+.2$, we derive that $C\cong \mathbb{Z}_2$.\\ Since $|V\Gamma|>4$, C has more than 2 orbits, contradicting G bi-quasiprimitive.\\Hence $C=1$ and $\soc(G^+)$ is also unique in $G$.
+}
+\end{frame}
+
+\begin{frame}
+Now assume $G^+$ is not quasiprimitive on both $\Delta_1$ and $\Delta_2$.\\ Then $\exists M\mathop{\triangleleft}\limits_{min} G^+$ acting intransitively on $\Delta_1$ hence has $> 2$ orbits on $V\Gamma$. Thus $M\not\triangleleft G$ and $M^g\neq M$. (Recall $G=\langle G^+,g\rangle$)\\Since $g^2\in G^+$, one has $MM^g=M\times M^g\leq G^+$ is normal in $G$.\\By bi-quasiprimitivity of $G$, $M\times M^g$ is transitive on $\Delta_1$ and $\Delta_2$.
+
+By ref.\footcite{LI2002197}\textsuperscript{,Thm 1.5}, either
+\begin{enumerate}[(a)]
+	\item $M\times M^g$ is regular on $\Delta_1$ and $\Delta_2$; or
+	\item $\soc(G^+)=M\times M^g$ is nonsolvable and not semiregular, and is the unique minimal normal subgroup of G.
+\end{enumerate}
+For case (b), done.\\
+For case (a), $\Gamma$ is a G-normal bi-Cayley graph on $M\times M^g$, again by ref.\footcite{CONDER2020264}\textsuperscript{,Lem 3.2}, is at most $(G,2)$-arc-transitive. A contradiction.\qed 
+\end{frame}
+
+
+
+\begin{frame}{Structure of $\soc(G^+)$}
+According to Lemma 4.4, we may set that
+\[ N:=\soc(G^+)=T_1\times T_2\times\cdots\times T_d\cong T^d\mathop{\triangleleft}\limits_{min}^{unique} G . \]
+Then $N$ is transitive on $\Delta_1$ and $\Delta_2$ since $G$ is bi-quasiprimitive.
+
+\ 
+
+Consider $G^+\curvearrowright \{T_1,\cdots,T_d\}$ by conjugation with kernel $K$.
+
+Then $N\triangleleft K\leq \Aut(T_1)\times \cdots\times \Aut(T_d)$. 
+And $T_j\triangleleft K$, $1\leq j\leq d$. 
+
+Let $M_j=C_K(T_j)$. Then\[ \cdots\times T_{j-1}\times 1\times T_{j+1}\times \cdots\leq M_j\leq \cdots\times \Aut(T_{j-1})\times 1\times  \Aut(T_{j+1})\times \cdots \]
+$M_j\triangleleft K$ and $K/M_j\lesssim \Aut(T_j)$ is almost simple with socle $T_j$.%\\A subgroup of $K$ is called \textbf{diagonal} if it is isomorphic to its projection on $\Aut(T_j)$ for each $1\leq j\leq d$.
+
+\ 
+
+Recall $H$ is a vertex-transitive solvable subgroup of $G$. 
+
+Let $H^+=H\cap G^+$ and $H_j$ be the projection of $H^+\cap N$ on $T_j$, $1\leq j\leq d$.
+
+Then $|H^+\cap N|$ divides $|H_1||H_2|\cdots|H_d|$.
+
+\end{frame}
+
+\begin{frame}{Exclude PA type}
+\begin{lemma}[4.5]
+Suppose $d\geq 2$. Then $\exists j\in\{1,2,...,d\}$ s.t. $M_j$ is transitive on $\Delta_1$ or $\Delta_2$; in particular, if $G^+$ is quasiprimitive on $\Delta_1$ or $\Delta_2$, then it is not of type PA.
+\end{lemma}
+\textbf{Proof. }\\
+Assume $G^+$ is quasiprimitive of type PA on $\Delta_1$ or $\Delta_2$. \\
+Then $\exists \mathcal{B}=\Omega^d$ a maximal block system s.t. $G^+\curvearrowright\mathcal{B}$ primitive by PA.\\
+For $(w_1,w_2,...,w_d)\in\Omega^d$, $(x_1,x_2,...,x_d)\in M_j$, we have
+\[(w_1,w_2,...,w_d)^{(x_1,x_2,...,x_d)}=(w_1^{x_1},w_2^{x_2},...,w_d^{x_d}).\]
+From previous analysis, $x_j=1$. Then transitivity of $M_j$ implies $|\Omega|=1$.\\
+\textcolor{blue}{Need to prove the transitivity of some $M_j$.}
+\end{frame}
+
+\begin{frame}
+%Suppose no $M_j$ is transitive on both $\Delta_1$ and $\Delta_2$.
+By lemma 4.4, $N\triangleleft G$ and $N_\alpha\neq 1$, $\forall \alpha\in V\Gamma$. By the following lemma,
+\Lem2.5
+we have $\Gamma$ is $N$-locally-primitive, hence $K$-locally-primitive since $N\leq K$.
+
+\end{frame}
+
+
+\begin{frame}
+\begin{lemma}[2.4]
+Let $\Gamma$ be a connected bipartite G-locally-primitive graph with G-orbits $\Delta_1$ and $\Delta_2$ on $V\Gamma$ and each $|\Delta_i|>1$. Suppose $\exists N\triangleleft G$ s.t. N is intransitive on $\Delta_1$ and $\Delta_2$. Then \footcite{GIUDICI2003analysing}\textsuperscript{,Lem 5.1}
+\begin{enumerate}
+	\item $\Gamma$ is a normal cover of $\Gamma_N$.
+	\item $N$ is semiregular on $V\Gamma$, $G^{V\Gamma_N}\cong G/N$ and $G_\alpha\cong(G/N)_v$ for $\alpha\in V\Gamma$ and $v\in V\Gamma_N$.
+	\item $\Gamma_N$ is $G/N$-locally-primitive. Futhermore, if $\Gamma$ is locally $(G,s)$-arc- transitive with $s\geq 2$, then $\Gamma_N$ is locally $(G/N,s)$-arc-transitive.
+\end{enumerate}
+\end{lemma}
+If $M_j\triangleleft K$ is intransitive on both $\Delta_1$ and $\Delta_2$ for each $j=1,...,d$, \\
+then $M_j$ is semiregular hence $M_j\cap K_\alpha=1$, and $K_\alpha\cong (K/M_j)_v\lesssim\Aut(T)$.
+Furthermore, $K_\alpha$ is a diagonal subgroup, i.e. \textcolor{red}{Why?}
+\[K_\alpha=\{(a,a,...,a)|a\in P\},\ P\leq\Aut(T).\]
+\end{frame}
+
+
+\begin{frame}
+\[N_\alpha=N\cap K_\alpha=(T_1\times\cdots\times T_d)\cap K_\alpha=\{(a,a,...,a)|a\in P\cap T\}\lesssim T,\]
+thus $|T|^{d-1}$ divides $|N:N_\alpha|=\textcolor{blue}{|\Delta_1|}$, 
+
+\ 
+
+$H^+\curvearrowright\Delta_1$ transitively $\implies$ $|T|^{d-1}$ divides $|H^+|=\textcolor{blue}{|H^+\cap K|}|H^+K/K|$.
+
+$N\curvearrowright \Delta_1$ transitively $\implies$ \[K/N=K_\alpha N/N\cong K_\alpha/N_\alpha\cong P/(P\cap T)\cong PT/T\lesssim \Out(T).\]
+
+$\therefore$ $|H^+\cap K|/\textcolor{blue}{|H^+\cap N|}$ divides $|\Out(T)|$.
+
+$\because$ $|H^+\cap N|$ divides $|H_1\times\cdots\times H_d|$,
+
+Therefore, \[|T|^{d-1}\text{ divides }|H_1\times\cdots\times H_d||\Out(T)||H^+K/K|.\]
+\end{frame}
+
+
+\begin{frame}
+\textbf{Case: $H^+\not\leq K$: }
+
+
+\end{frame}
+
+\begin{frame}
+\textbf{Case: $H^+\leq K$: }
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Quasiprimitive $G^+\curvearrowright \Delta_1$ and $\Delta_2$} 
+\begin{lemma}[4.6]
+$G^+$ is quasiprimitive on $\Delta_1$ and $\Delta_2$.
+\end{lemma}
+\textbf{Proof. } Assume $G^+\curvearrowright\Delta_1$ is NOT quasiprimitive.
+\end{frame}
+
+\begin{frame}
+\textbf{Case (a): } $N_\alpha\cong T$.
+\end{frame}
+
+
+\begin{frame}
+\textbf{Case (b): } $1\neq N_\alpha< T$.
+\end{frame}
+
+\begin{frame}
+\textbf{Case (b.1): } L is nonsolvable.
+\end{frame}
+
+\begin{frame}
+\textbf{Case (b.1): } L is solvable.
+\end{frame}
+
+\begin{frame}{Summary}
+Recall hypothesis in the beginning of this section:
+\begin{itemize}
+	\item Let $\Gamma$ be a connected bipartite $(G,s)$-transitive graphs of val$\geq 3$, with bipartitions $\Delta_1$ and $\Delta_2$ and $s\geq 3$.
+	\item Suppose $G$ is bi-quasiprimitive on $V\Gamma$ and contains a vertex-transitive solvable subgroup $H$. 
+	\item Set $G^+=G_{\Delta_1}$, the setwise stabilizer of $G$ on $\Delta_1$, and $H^+=H\cap G^+$.
+\end{itemize}
+
+\begin{proposition}[4.7]
+Under such hypothesis, either $\Gamma=\mathbf{K}_{n,n}$, or $G$ is an almost simple group and $G^+$ is quasiprimitive on both $\Delta_1$ and $\Delta_2$.
+\end{proposition}
+\proof{ If $G^+$ acts unfaithfully on $\Delta_1$ or $\Delta_2$, lemma 4.2 gives $\Gamma=\mathbf{K}_{n,n}$.\\
+Faithful case: \\Lemma 4.3 shows either $G^+$ is not quasiprimitive on $\Delta_1$ or $\Delta_2$, or quasiprimitive on both with same type AS or PA.\\Lemma 4.6 exclude the former. Lemma 4.5 exclude PA in the latter.\\Finally lemma 4.4 implies G is AS.}
+\end{frame}
+
+\subsection{Almost simple groups}
+\begin{frame}{$\soc(G)=T\leq G\leq \Aut(T)$}
+By proposition 4.7, we may assume $G$ is almost simple with socle $T$, and $G^+$ is quasiprimitive on $\Delta_1$ and $\Delta_2$.
+
+Set $G=T.\mathcal{O}$ and $G^+=T.\mathcal{O}'$, with $\mathcal{O}'<\mathcal{O}\leq \Out(T)$ and $|\mathcal{O}:\mathcal{O}'|=2$.
+
+T is transitive on $\Delta_i$ $\implies$ $G=G_\alpha T$ $\implies$ $G_\alpha/T_\alpha\cong G_\alpha T/ T=G/T=\mathcal{O}$
+
+By Frattini argument, $G=HG_\alpha$ and $G^+=H^+G_\alpha$. 
+
+Both factorization have a solvable factor $H$, $H^+$.
+
+\begin{lemma}[5.1]
+$T\neq \PSL_2(q)$ with $q$ a prime power.
+\end{lemma}
+\proof{ Check the classification of connected 2-arc-transitive graphs admitting a two-dimensional linear automorphism group, see ref.\footcite{HASSANI1999twoarc}, in which the only 3-arc-transitive graph is the Petersen graph, a non-bipartite graph.}
+\end{frame}
+
+\begin{frame}{Case: $G_\alpha$ solvable}
+\begin{lemma}[5.2]
+If $G_\alpha$ solvable, then $T=\PSL_3(3)$ and $\Gamma=\PH(3,3^3)$ is 4-transitive of valency 4.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Case: T alternating}
+\begin{lemma}[5.3]
+T is not an alternating simple group.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Case: T sporadic}
+\begin{lemma}[5.4]
+T is not a sporadic simple group.
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Case: T classical }
+\begin{lemma}[5.5]
+If T is a classical simple group of Lie type, then $s\leq 4$, and one of the following is true.
+\begin{enumerate}
+	\item $T=\PSL_5(2)$, and $\Gamma\cong\GI(5,2,2)$.
+	\item $T=\PSU_3(5)$, and $\Gamma\cong\HS_{50}^{(2)}$.
+	\item $\Gamma$ is of valency $p^f+1$, $\PSL_3(p^f).2\leq G\leq\Aut(\PSL_3(p^f))$ and $\mathbb{Z}_p^{2f}:\SL_2(p^f)\triangleleft G_\alpha\leq P_1$ or $P_2$ where $P_1$ and $P_2$ are the stabilizers of T on a 1-dimension subspace and a 2-dimension subspace, respectively.
+\end{enumerate}
+\end{lemma}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
