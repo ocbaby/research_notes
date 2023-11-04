@@ -1,0 +1,129 @@
+
+\ifx\allfiles\undefined
+    \include{config}
+    \begin{document}
+
+\else
+
+\fi
+
+\section{Introduction}
+\textbf{Pace: }
+\begin{enumerate}[Lesson 1:]
+	\item Chapter 1 (Overview)
+	\item \S 2.1-\S 2.4 (Group action, $A_n$)
+	\item \S 2.5-\S 2.7 (O'Nan-Scott, maximal subgroups of $S_n$ and $A_n$, cover)
+	\item \S 3.1-\S 3.3 ($\PSL_n(q)$)
+	\item \S 3.4 (forms: bilinear, sesquilinear, quadratic)
+	\item \S 3.5 ($\PSp_{2m}(q)$)
+	\item \S 3.6 ($\PSU_n(q)$)
+	\item \S 3.7 ($\PO_{m}(q)$, odd $q$)
+	\item \S 3.8 ($\PO_{2n}(q)$, even $q$)
+	\item \S 3.10 (maximal subgroups of classical groups)
+\end{enumerate}
+
+\vline 
+
+\noindent \textbf{References:}
+\begin{itemize}
+	\item[Main:] The finite simple groups - Wilson (GTM 251)
+	\item[Perm.:] Permutation Groups - J.D. Dixon, B. Mortimer (GTM 163)
+	\item[ ] Finite permutation groups - Wielandt
+	\item[Class.:] The Subgroup Structure of the Finite Classical Groups - Kleidman \& Liebeck
+	\item[ ] The Maximal Subgroups of the Low-Dimensional Finite Classical Groups - J.N. Bray, et al.
+		\item[ ] [Notes] Classical Groups without Orthogonal (2021fall) - C.H. Li, P.C. Hua
+	\item[More:] (notes and papers to be referred)
+	\item[ ]
+\end{itemize}
+
+
+\newpage
+\subsection{History}
+\begin{itemize}
+	\item[] Galois(1830s): $A_n$, $\PSL_2(p)$, realized the importance
+	\item[] Jordan-H\"older: $1=G_0\triangleleft G_1\triangleleft \cdots\triangleleft G_{n-1}\triangleleft G_n=G$, where $G_{i}/G_{i-1}$ is simple
+	\item[] Camille Jordan (1870): $\PSL_n(q)$
+	\item[] Sylow theorem (1872): the first tools for classifying finite simple groups
+	\item[] Mathieu(1860s): $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$
+	\item[] L.E. Dickson(1901): classical groups, inspired by Lie algebras
+	\item[] Chevalley(1955): a uniform construction of $\PSL_{n+1}(q)$, $\PO_{2n+1}(q)$, $\PSp_{2n}(q)$, $\PO_{2n}^+(q)$
+	\item[] "twisting": $^3D_4(q)$, $^2E_6(q)$
+	\item[] Feit-Thompson(1963): odd order is soluble, hence nonab. FSG has an involution
+	\item[] 1960s: proof of CSFG began
+	\item[] 1970s: 20 sporadic simple groups dicovered
+	\item[] 1980s: CSFG was "almost" complete
+\end{itemize}
+
+\noindent 3 generations of proof of CSFG:
+\begin{enumerate}
+	\item 1982 Gorenstein, abandon after vol 1, too long, bugs in quasithin case
+	\item 1992 Lyons, Solomon, vol 1-6 done, bug fixed, vol 7? also too long 
+	\item Aschbacher, et al., find some geometric characters to simplify the proof, fusion system?
+\end{enumerate}
+
+\newpage
+\subsection{CFSG}
+Every finite simple group is isomorphic to one of the followings:
+\begin{enumerate}[(i)]
+	\item a cyclic group $C_p$ of prime order $p$;
+	\item an alternating group $A_n$ for $n\geq 5$;
+	\item a classical group:
+		\begin{itemize}
+			\item linear: $\PSL_n(q)$, $n\geq 2$, except $\PSL_2(2)$ and $\PSL_2(3)$;
+			\item unitary: $\PSU_n(q)$, $n\geq 3$, except $\PSU_3(2)$;
+			\item symplectic: $\PSp_{2n}(q)$, $n\geq 2$, except $\PSp_4(2)$;
+			\item orthogonal: $\PO_{2n+1}(q)$, $n\geq 3$, $q$ odd; $\PO_{2n}^+(q)$, $\PO_{2n}^-(q)$, $n\geq 4$;
+		\end{itemize}
+		where $q$ is a power $p^a$ of a prime $p$;
+	\item an exceptional group of Lie type:
+		\[ G_2(q),q\geq 3;\ F_4(q);\ E_6(q);\  ^2E_6(q);\ ^3D_4(q);\ E_7(q);\ E_8(q) \] with $q$ a prime power, or\[ ^2B_2(2^{2n+1}),\  ^2G_2(3^{2n+1},\ ^2F_4(2^{2n+1}),\ n\geq 1; \]or the Tits group $^2F_4(2)'$;
+	\item one of 26 sporadic simple groups:
+		\begin{itemize}
+			\item the five Mathieu groups $M_{11}$, $M_{12}$, $M_{22}$, $M_{23}$, $M_{24}$;
+			\item the seven Leech lattice groups Co$_1$, Co$_2$, Co$_3$, McL, HS, Suz, J$_2$;
+			\item the three Fischer groups Fi$_{22}$ , Fi$_{23}$, Fi$_{24}'$ ;
+			\item the five Monstrous groups $\mathbb{M}$, $\mathbb{B}$, Th, HN, He;
+			\item the six pariahs J$_1$, J$_3$, J$_4$, O'N, Ly, Ru.
+		\end{itemize}
+\end{enumerate}
+Conversely, every group in this list is simple, and the only repetitions in this list are:
+\begin{equation*}
+\begin{aligned}
+	\PSL_2(4)\cong &\PSL_2(5)\cong A_5;\\
+	&\PSL_2(7)\cong\PSL_3(2);\\
+	&\PSL_2(9)\cong A_6;\\
+	&\PSL_4(2)\cong A_8;\\
+	&\PSU_4(2)\cong \PSp_4(3).
+\end{aligned}
+\end{equation*}
+
+
+introduction, construction, orders, simplicity, \textbf{action(reveal subgroup structure)}
+
+\newpage
+\subsection{After CFSG}
+\subsubsection{Permutation group theory}
+
+Classify
+\begin{itemize}
+	\item multiply-transitive groups
+	\item 2-transitive groups
+	\item primitive permutation groups (O'Nan-Scott Thm): reduce to AS case
+\end{itemize}
+
+
+
+\subsubsection{Maximal subgroups of simple groups}
+
+\begin{itemize}
+	\item[$A_n:$] O'Nan-Scott, Liebeck-Praeger-Saxl \\(The symmetric difference set of AS subgroups and maximal subgroups of $A_n$ is listed out, while listing their intersection is impossible.)
+	\item[Classical:] began with Aschbacher,1984, see Kleidman-Liebeck and Low-dimension.
+	\item[Exceptional:] Done recently by David Craven, see arXiv
+	\item[Sporadic:] Done. See a survey by Wilson and recent work on arXiv for the Monster.
+\end{itemize}
+
+
+\ifx\allfiles\undefined
+    %\bibliography{abcd}
+    \end{document}
+\fi
