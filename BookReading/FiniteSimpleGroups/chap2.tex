@@ -1,10 +1,9 @@
-
-\ifx\allfiles\undefined
+% '\def\ChapTwo{}' is needed before include or input this file
+\ifx\ChapTwo\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
     \input{config}
     \begin{document}
-\else
-
+\else % Compile as subfile
 \fi
 
 
@@ -16,9 +15,11 @@ subgroup structure (O'Nan-Scott Thm)
 ddsss
 hahah
 
+\def\ChapTwoSecTwo{Chapter 2 section 2 defined} %
+\input{chap2/sec2.2}
 
- \ifx\allfiles\undefined
+
+\ifx\ChapTwo\undefined
      %\bibliography{abcd}
      \end{document}
- \fi
-%\end{document}
+\fi

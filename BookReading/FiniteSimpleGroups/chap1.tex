@@ -1,11 +1,9 @@
-
-\ifx\allfiles\undefined
-\documentclass[a4paper,11pt]{article}
+% '\def\ChapOne{}' is needed before include or input this file
+\ifx\ChapOne\undefined % Compile separately
+    \documentclass[a4paper,11pt]{article}
     \input{config}
     \begin{document}
-
-\else
-
+\else % Compile as subfile
 \fi
 
 \section{Introduction}
@@ -123,9 +121,8 @@ Classify
 	\item[Sporadic:] Done. See a survey by Wilson and recent work on arXiv for the Monster.
 \end{itemize}
 
-
-\ifx\allfiles\undefined
-    %\bibliography{abcd}
-    \end{document}
-\else
+\ifx\ChapOne\undefined
+     %\bibliography{abcd}
+     \end{document}
 \fi
+
