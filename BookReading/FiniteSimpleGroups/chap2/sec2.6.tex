@@ -1,20 +1,106 @@
-% '\def\ChapTwoSecTwo{}' is needed before include or input this file
-\ifx\ChapTwoSecTwo\undefined % Compile separately
+% '\def\ChapTwoSecSix{}' is needed before include or input this file
+\ifx\ChapTwoSecSix\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
     \input{../config}
+    \def\maintitle#1{\section*{#1}}
+    \def\subtitle#1{\section{#1}}
     \begin{document}
 \else % Compile as subfile
+    \def\maintitle#1{\subsection{#1}}
+    \def\subtitle#1{\subsubsection{#1}}
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\maintitle{The O'Nan-Scott Theorem}
+\subtitle{Some Lemmas}
+\subtitle{The proof of the O'Nan-Scott Theorem}
+
+Last week we introduced some lemmas and proved part of the O'Nan-Scott Theorem. This week we will finish the proof of the O'Nan-Scott Theorem.
+
+\noindent\textbf{Notation:} Let $H$ be a subgroup of $S_n$ not containing $A_n$, $N$ be a minimal normal subgroup of $H$, and $K$ be the stabilizer in $H$ of a point.
+
+$H$ intransitive $\implies$ case (i).
+
+$H$ transitive imprimitive $\implies$ case (ii).
+
+\noindent Now we assume $H$ primitive. And hence the discussion zoom into $\mathrm{soc}(H)$.
+
+$\exists N$ abelian $\implies$ case (iv)affine.
+
+\noindent Additionally we assume $\forall N$ nonabelian. 
+
+If $H$ has more than one minimal normal subgroups $N_1\neq N_2$. 
+
+It can be shown that $\exists x\in S_n$ conjugates $N_1$ to $N_2$. \textcolor{red}{specify x}
+
+By corollary 2.11, $x$ also conjugates $N_2=C_H(N_1)$ to $N_1=C_H(N_2)$. \textcolor{red}{(Why?)} 
+
+Hence $H<\langle H,x\rangle$, which has a unique minimal normal subgroup $N_1\times N_2$.
+
+\noindent Additionally we assume $H$ has a unique minimal normal subgroup $N$, which is nonabelian.
+
+$N$ simple $\implies C_H(N)=1\implies H\mathop{\curvearrowright}\limits^{\text{conj.}} N$ faithfully $\implies$ case (vi)AS.
+
+$N=T^m=T_1\times\cdots\times T_m$ with $m>1$ $\implies$ $H\mathop{\curvearrowright}\limits^{\text{conj.}} \{T_1,\cdots,T_m\}$ transitively, and $K$ as well.
+
+Let $K_i:=p_i(K\cap N)\leq T_i$ the projection of $K$ onto $T_i$. Then $K\cap N\leq K_1\times\cdots\times K_m$.
 
 
 
-\subsection{Permutations}
-This is about PG
-hhhhh sddd
+\noindent Case $K_i\neq T_i$ for some $i$: 
+
+Now $K\cap N\leq K_1\times\cdots\times K_m < N$.
+
+\underline{Claim:} $K$ normalizes $K_1\times\cdots\times K_m$. 
+
+{\color{gray}
+Since $K\cap N\triangleleft K$, $\forall k\in K$, $\forall x\in K\cap N$, 
+
+we have $x=p_1(x)\cdots p_m(x)$, and $p_1(x)^k\cdots p_m(x)^k=x^k=p_1(x^k)\cdots p_m(x^k)\in K\cap N$. 
+
+Then $p_i(x)^k=p_j(x^k)$ whenever $T_i^k=T_j$. (In direct product, equal iff. all coordinates equal.)
+
+$\forall y \in K_1\times\cdots\times K_m$, $\exists x_1,\cdots, x_m\in K\cap N$ s.t. $y=p_1(x_1)\cdots p_m(x_m)$. 
+
+Then $y^k=p_1(x_1)^k\cdots p_m(x_m)^k=p_1(x_{l_1}^k)\cdots p_m(x_{l_m}^k) \in K_1\times\cdots\times K_m$, where $T_i=T_{l_i}^k$.
+}
+
+By corollary 2.15, $K_1\times\cdots\times K_m=K\cap N$ and $K$ permutes $K_i$'s transitively. Let $k:=|T_i:K_i|$. 
+
+Then $H=(T_1\times\cdots\times  T_m)\rtimes K\leq S_k\wr S_m\curvearrowright [T_1:K_1]\times\cdots\times[T_m:K_m]$ $\implies$ case (iii)PA.
+
+\noindent Case $K_i= T_i$ for all $i$: 
+
+\textit{Support} of $(t_1,\cdots,t_m)\in N$ is defined as $\{i\mid t_i\neq 1\}$.
+
+$\Omega_1:=$ a non-empty min. supp. of an elt in $K\cap N$. $\implies$ $\Omega_1$ a block of $K,H\curvearrowright [m]$.
+
+{\color{gray}
+1 and all elts in $K\cap N$ with support $\Omega_1$ (i.e. $t_i\neq 1$ and $t_j=1$ $\forall i\in\Omega_1, \forall j\notin\Omega_1$) 
+
+forms a normal subgp of $K\cap N$, which maps onto a normal subgp of hence $T_i$ itself $\forall i\in\Omega_1$.
+
+$\Omega_1\cap \Omega_2\neq \emptyset\implies \exists x,y$ s.t. $[x,y]\neq 1$ has support contained in $\Omega_1\cap \Omega_2$, that is $\Omega_1$
+}
+
+$|\Omega_1|=1\implies N\leq K$, a contradiction.
+
+$|\Omega_1|=m\implies$ $K\cap N=\{(t,\cdots,t)\mid t\in T\}$ WLOG.  $N\curvearrowright [N:K\cap N]$ $\implies$ case (v)diagonal.
+
+\textcolor{gray}{$\forall i, \forall x, y \in K\cap N$, $p_i(x)=p_i(y)\implies p_i(xy^{-1})=1$ $\implies$ $xy^{-1}=1$ i.e. $p_i|_{K\cap N}$ inj. }
+
+
+$|\Omega_1|=k\neq 1,m\implies N=\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)^{l}\cong T^{kl}$, $N\cap K=\left(\mathrm{diag}\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)\right)^l\cong T^l$.
+
+The action of each $\mathop{\times}\limits_{i\in\Omega_1}T_i$ is diagonal of degree $r=|T|^{k-1}$. $H\leq S_r\wr S_l\curvearrowright [r]^l$ $\implies$ case (iii)PA.
 
 
 
-\ifx\ChapTwoSecTwo\undefined
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapTwoSecSix\undefined
      %\bibliography{abcd}
      \end{document}
 \fi
