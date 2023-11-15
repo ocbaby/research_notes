@@ -1,7 +1,9 @@
-% '\def\ChapTwoSecTwo{}' is needed before include or input this file
-\ifx\ChapTwoSecTwo\undefined % Compile separately
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\SubfileName\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
-    \input{../config} % common config
+    \input{config} % common config
 
     % additional config for this file
     \def\maintitle#1{\section*{#1}}
@@ -18,16 +20,13 @@
         \def\subtitle#1{\subsection{#1}}
     \fi
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%
 
+\maintitle{Main}
+\subtitle{Sub}
 
-
-\subsection{Permutations}
-This is about PG
-hhhhh sddd
-
-
-
-\ifx\ChapTwoSecTwo\undefined
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\SubfileName\undefined % Compile separately
      %\bibliography{abcd}
      \end{document}
 \fi

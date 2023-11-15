@@ -1,5 +1,7 @@
-% '\def\ChapTwoSecTwo{}' is needed before include or input this file
-\ifx\ChapTwoSecTwo\undefined % Compile separately
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\ChapTwoSecEight\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
     \input{../config} % common config
 
@@ -18,16 +20,16 @@
         \def\subtitle#1{\subsection{#1}}
     \fi
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maintitle{Coxter Groups}
 
 
 
-\subsection{Permutations}
-This is about PG
-hhhhh sddd
 
 
-
-\ifx\ChapTwoSecTwo\undefined
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapTwoSecEight\undefined % Compile separately
      %\bibliography{abcd}
      \end{document}
 \fi

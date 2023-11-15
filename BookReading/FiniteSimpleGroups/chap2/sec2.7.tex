@@ -1,5 +1,7 @@
-% '\def\ChapTwoSecTwo{}' is needed before include or input this file
-\ifx\ChapTwoSecTwo\undefined % Compile separately
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\ChapTwoSecSeven\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
     \input{../config} % common config
 
@@ -18,16 +20,18 @@
         \def\subtitle#1{\subsection{#1}}
     \fi
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maintitle{Covering Groups}
+\subtitle{Schur Multiplier}
+\subtitle{Double Covers of $A_n$ and $S_n$}
+\subtitle{Triple Covers of $A_6$ and $A_7$}
 
 
 
-\subsection{Permutations}
-This is about PG
-hhhhh sddd
 
-
-
-\ifx\ChapTwoSecTwo\undefined
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapTwoSecSeven\undefined % Compile separately
      %\bibliography{abcd}
      \end{document}
 \fi

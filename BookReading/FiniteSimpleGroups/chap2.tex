@@ -2,26 +2,36 @@
 \ifx\ChapTwo\undefined % Compile separately
     \documentclass[a4paper,11pt]{article}
     \input{config}
+
+    % additional config for this file
+    \def\maintitle#1{\section*{#1}}
+    \def\chaptitle{}
+    % \def\subtitle#1{\section#1}
+
     \begin{document}
+
 \else % Compile as subfile
+    \def\maintitle#1{\section{#1}}
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{The Alternating Groups}
-\subsection{Introduction}
-$\Aut(A_n)\cong S_n$ for $n\geq 7$ but for $n=6$ there is an exceptional outer automorphism of $S_6$.hahahssww
+\maintitle{The Alternating Groups}
 
-subgroup structure (O'Nan-Scott Thm)
-ddsss
-hahah
 
-\def\ChapTwoSecTwo{Chapter 2 section 2 is defined.}
-\input{chap2/sec2.2.tex}
+% \def\ChapTwoSecTwo{Chapter 2 section 2 is defined.}
+% \input{chap2/sec2.2.tex}
 
 \def\ChapTwoSecSix{Chapter 2 section 6 is defined.}
 \input{chap2/sec2.6.tex}
 
-\ifx\ChapTwo\undefined
+\def\ChapTwoSecSeven{}
+\input{chap2/sec2.7.tex}
+
+\def\ChapTwoSecEight{}
+\input{chap2/sec2.8.tex}
+
+\ifx\ChapTwo\undefined % Compile separately
      %\bibliography{abcd}
      \end{document}
 \fi
