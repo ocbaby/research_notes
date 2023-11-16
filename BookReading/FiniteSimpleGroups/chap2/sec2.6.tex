@@ -33,7 +33,7 @@ $H$ intransitive $\implies$ case (i).
 
 $H$ transitive imprimitive $\implies$ case (ii).
 
-\noindent Now we assume $H$ primitive. And hence the discussion zoom into $\mathrm{soc}(H)$.
+\noindent Now we assume $H$ primitive. And hence the discussion zooms into $\mathrm{soc}(H)$.
 
 $\exists N$ abelian $\implies$ case (iv)affine.
 
@@ -55,25 +55,27 @@ $N=T^m=T_1\times\cdots\times T_m$ with $m>1$ $\implies$ $H\mathop{\curvearrowrig
 
 Let $K_i:=p_i(K\cap N)\leq T_i$ the projection of $K$ onto $T_i$. Then $K\cap N\leq K_1\times\cdots\times K_m$.
 
+We divide the discussion into 2 cases. Before that, we claim the following fact.
 
+\underline{Claim:} $K$ normalizes $K_1\times\cdots\times K_m$. 
+{\color{gray}
+\begin{proof}
+    
+    Since $K\cap N\triangleleft K$, $\forall k\in K$, $\forall x\in K\cap N$, 
+    
+    we have $x=p_1(x)\cdots p_m(x)$, and $p_1(x)^k\cdots p_m(x)^k=x^k=p_1(x^k)\cdots p_m(x^k)\in K\cap N$. 
+    
+    Then $p_i(x)^k=p_j(x^k)$ whenever $T_i^k=T_j$. (In direct product, equal iff. all coordinates equal.)
+    
+    $\forall y \in K_1\times\cdots\times K_m$, $\exists x_1,\cdots, x_m\in K\cap N$ s.t. $y=p_1(x_1)\cdots p_m(x_m)$. 
+    
+    Then $y^k=p_1(x_1)^k\cdots p_m(x_m)^k=p_1(x_{l_1}^k)\cdots p_m(x_{l_m}^k) \in K_1\times\cdots\times K_m$, where $T_i=T_{l_i}^k$.
+\end{proof}
+}
 
 \noindent Case $K_i\neq T_i$ for some $i$: 
 
 Now $K\cap N\leq K_1\times\cdots\times K_m < N$.
-
-\underline{Claim:} $K$ normalizes $K_1\times\cdots\times K_m$. 
-
-{\color{gray}
-Since $K\cap N\triangleleft K$, $\forall k\in K$, $\forall x\in K\cap N$, 
-
-we have $x=p_1(x)\cdots p_m(x)$, and $p_1(x)^k\cdots p_m(x)^k=x^k=p_1(x^k)\cdots p_m(x^k)\in K\cap N$. 
-
-Then $p_i(x)^k=p_j(x^k)$ whenever $T_i^k=T_j$. (In direct product, equal iff. all coordinates equal.)
-
-$\forall y \in K_1\times\cdots\times K_m$, $\exists x_1,\cdots, x_m\in K\cap N$ s.t. $y=p_1(x_1)\cdots p_m(x_m)$. 
-
-Then $y^k=p_1(x_1)^k\cdots p_m(x_m)^k=p_1(x_{l_1}^k)\cdots p_m(x_{l_m}^k) \in K_1\times\cdots\times K_m$, where $T_i=T_{l_i}^k$.
-}
 
 By corollary 2.15, $K_1\times\cdots\times K_m=K\cap N$ and $K$ permutes $K_i$'s transitively. Let $k:=|T_i:K_i|$. 
 
@@ -81,26 +83,38 @@ Then $H=(T_1\times\cdots\times  T_m)\rtimes K\leq S_k\wr S_m\curvearrowright [T_
 
 \noindent Case $K_i= T_i$ for all $i$: 
 
-\textit{Support} of $(t_1,\cdots,t_m)\in N$ is defined as $\{i\mid t_i\neq 1\}$.
+\textit{Support} of $(t_1,\cdots,t_m)\in N$ is defined as $\mathrm{supp}(t):=\{i\mid t_i\neq 1\}$.
 
-$\Omega_1:=$ a non-empty min. supp. of an elt in $K\cap N$. $\implies$ $\Omega_1$ a block of $K,H\curvearrowright [m]$.
 
+$\Omega_1:=$ a non-empty min.(with set inclusion) supp. of an elt in $K\cap N$. 
+
+\underline{Claim:} $\Omega_1$ a block of $K,H\curvearrowright [m]$.
 {\color{gray}
-1 and all elts in $K\cap N$ with support $\Omega_1$ (i.e. $t_i\neq 1$ and $t_j=1$ $\forall i\in\Omega_1, \forall j\notin\Omega_1$) 
-
-forms a normal subgp of $K\cap N$, which maps onto a normal subgp of hence $T_i$ itself $\forall i\in\Omega_1$.
-
-$\Omega_1\cap \Omega_2\neq \emptyset\implies \exists x,y$ s.t. $[x,y]\neq 1$ has support contained in $\Omega_1\cap \Omega_2$, that is $\Omega_1$
+\begin{proof}
+    1 and all elts in $K\cap N$ with support $\Omega_1$ (i.e. $t_i\neq 1$ and $t_j=1$ $\forall i\in\Omega_1, \forall j\notin\Omega_1$) 
+    
+    forms a normal subgp of $K\cap N$, which maps onto a normal subgp of hence $T_i$ itself $\forall i\in\Omega_1$.
+    
+    $\Omega_1\cap \Omega_2\neq \emptyset\implies \exists x,y$ s.t. $[x,y]\neq 1$ has support contained in $\Omega_1\cap \Omega_2$, that is $\Omega_1$ by min.
+\end{proof}
 }
 
 $|\Omega_1|=1\implies N\leq K$, a contradiction.
 
 $|\Omega_1|=m\implies$ $K\cap N=\{(t,\cdots,t)\mid t\in T\}$ WLOG.  $N\curvearrowright [N:K\cap N]$ $\implies$ case (v)diagonal.
 
-\textcolor{gray}{$\forall i, \forall x, y \in K\cap N$, $p_i(x)=p_i(y)\implies p_i(xy^{-1})=1$ $\implies$ $xy^{-1}=1$ i.e. $p_i|_{K\cap N}$ inj. }
+{\color{gray}
+$\forall i, \forall x, y \in K\cap N$, $p_i(x)=p_i(y)\implies p_i(xy^{-1})=1$ $\implies$ $xy^{-1}=1$ i.e. $p_i|_{K\cap N}$ inj. 
+
+$\forall x,y\in K\cap N$ with nonempty support (hence [m]), if $p_i(x)= p_i(y)$ for some $i$, then for all $i\in [m]$ since otherwise $1\neq xy^{-1}\in K\cap N$ has smaller support. Note that $K$ acts transitively on $\{K_1,\cdots,K_m\}$, so $p_i(x)^k=p_j(x^k)$ for some $k\in K$. Thus $p_i(x)=p_1(x^{k_i})^{k_i^{-1}}$ where $T_i^{k_i}=T_1$
+}
 
 
-$|\Omega_1|=k\neq 1,m\implies N=\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)^{l}\cong T^{kl}$, $N\cap K=\left(\mathrm{diag}\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)\right)^l\cong T^l$.
+$|\Omega_1|=k\neq 1,m$:
+
+Suppose $\Omega_1$ is in a block system $\{\Omega_1,\cdots,\Omega_l\}$ of $K$ on $[m]$. Let $N_j=\mathop{\times}\limits_{i\in\Omega_j}T_i$ for $j=1,\cdots,l$. Then $N=N_1\times\cdots\times N_l\cong T^{kl}$. For each $N_j$, $N_j\cap K$ is a diagonal subgroup of $N_j$.
+
+$\implies N=\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)^{l}\cong T^{kl}$, $N\cap K=\left(\mathrm{diag}\left(\mathop{\times}\limits_{i\in\Omega_1}T_i\right)\right)^l\cong T^l$.
 
 The action of each $\mathop{\times}\limits_{i\in\Omega_1}T_i$ is diagonal of degree $r=|T|^{k-1}$. $H\leq S_r\wr S_l\curvearrowright [r]^l$ $\implies$ case (iii)PA.
 
