@@ -57,10 +57,9 @@ Let $K_i:=p_i(K\cap N)\leq T_i$ the projection of $K$ onto $T_i$. Then $K\cap N\
 
 We divide the discussion into 2 cases. Before that, we claim the following fact.
 
-\underline{Claim:} $K$ normalizes $K_1\times\cdots\times K_m$. 
+\noindent\underline{Claim:} $K$ normalizes $K_1\times\cdots\times K_m$. 
 {\color{gray}
 \begin{proof}
-    
     Since $K\cap N\triangleleft K$, $\forall k\in K$, $\forall x\in K\cap N$, 
     
     we have $x=p_1(x)\cdots p_m(x)$, and $p_1(x)^k\cdots p_m(x)^k=x^k=p_1(x^k)\cdots p_m(x^k)\in K\cap N$. 
@@ -88,14 +87,11 @@ Then $H=(T_1\times\cdots\times  T_m)\rtimes K\leq S_k\wr S_m\curvearrowright [T_
 
 $\Omega_1:=$ a non-empty min.(with set inclusion) supp. of an elt in $K\cap N$. 
 
-\underline{Claim:} $\Omega_1$ a block of $K,H\curvearrowright [m]$.
+\underline{Claim:} $\Omega_1$ a block of $K,H\curvearrowright [m]$ which is induced by $K,H\curvearrowright \{T_1,\cdots,T_m\}$.
 {\color{gray}
 \begin{proof}
-    1 and all elts in $K\cap N$ with support $\Omega_1$ (i.e. $t_i\neq 1$ and $t_j=1$ $\forall i\in\Omega_1, \forall j\notin\Omega_1$) 
-    
-    forms a normal subgp of $K\cap N$, which maps onto a normal subgp of hence $T_i$ itself $\forall i\in\Omega_1$.
-    
-    $\Omega_1\cap \Omega_2\neq \emptyset\implies \exists x,y$ s.t. $[x,y]\neq 1$ has support contained in $\Omega_1\cap \Omega_2$, that is $\Omega_1$ by min.
+    All elts in $K\cap N$ with support $\Omega_1$ (i.e. $t_i\neq 1$ and $t_j=1$ $\forall i\in\Omega_1, \forall j\notin\Omega_1$) together with 1 forms a normal subgroup of $K\cap N$, which maps onto a normal subgroup of hence $T_i$ itself $\forall i\in\Omega_1$.
+    $\forall g\in K$, if $\Omega_1\cap \Omega_1^g\neq \emptyset,\Omega_1$, then $ \exists x\in K\cap N$ s.t. $ \mathrm{supp}(x)=\Omega_1$ and $\mathrm{supp}(x^g)=\Omega_1^g$. Now $[x,x^g]\neq 1$ and $\mathrm{supp}([x,x^g])\subset\Omega_1\cap \Omega_1^g$, contradicting to the minimality of $\Omega_1$.
 \end{proof}
 }
 
@@ -104,9 +100,11 @@ $|\Omega_1|=1\implies N\leq K$, a contradiction.
 $|\Omega_1|=m\implies$ $K\cap N=\{(t,\cdots,t)\mid t\in T\}$ WLOG.  $N\curvearrowright [N:K\cap N]$ $\implies$ case (v)diagonal.
 
 {\color{gray}
-$\forall i, \forall x, y \in K\cap N$, $p_i(x)=p_i(y)\implies p_i(xy^{-1})=1$ $\implies$ $xy^{-1}=1$ i.e. $p_i|_{K\cap N}$ inj. 
+$\forall i, \forall x, y \in K\cap N$, $p_i(x)=p_i(y)\implies p_i(xy^{-1})=1$ $\implies$ $\mathrm{supp}(xy^{-1})=\emptyset$ $\implies$ $xy^{-1}=1$ i.e. $p_i|_{K\cap N}$ is injective. Since $K_i=T_i$, $p_i|_{K\cap N}$ is surjective hence bijective. Thus $K\cap N$ is now a full diagonal subgroup of $N$. Then the coset action $N\curvearrowright [N:K\cap N]$ is of diagonal type. Now identify each $\alpha^g\in\Omega$ with the corresponding coset $(H_\alpha\cap N)g$. The stabilizer $N_{\alpha^g}=H_{\alpha^g}\cap N=(H_\alpha\cap N)^g$ is also the stabilizer of the coset $(H_\alpha\cap N)g$.
+}
 
-$\forall x,y\in K\cap N$ with nonempty support (hence [m]), if $p_i(x)= p_i(y)$ for some $i$, then for all $i\in [m]$ since otherwise $1\neq xy^{-1}\in K\cap N$ has smaller support. Note that $K$ acts transitively on $\{K_1,\cdots,K_m\}$, so $p_i(x)^k=p_j(x^k)$ for some $k\in K$. Thus $p_i(x)=p_1(x^{k_i})^{k_i^{-1}}$ where $T_i^{k_i}=T_1$
+{\color{lightgray}
+\textbf{Remark. } Actually, $K\cap N$ is a full diagonal subgroup of $N$ $\implies$ $K\cap N=\{(t^{\varphi_1},\cdots,t^{\varphi_m})\mid t\in T\}$ where $\varphi_i$ is an isomorphism from $T$ to $T_i$. For each $\beta\in\Omega$, we have an $H_\beta\cap N$ and can determine $\psi_i$'s basing on $\varphi_i$'s, since the $H_\beta\cap N$'s are conjugate to $H_\alpha\cap N$ by the transitive group $N$. In detail, suppose $\alpha^g=\beta$ for some $g\in N$ and $H_\alpha\cap N=\{(t^{\varphi_1},\cdots,t^{\varphi_m})\mid t\in T\}$ and $H_\beta\cap N=\{(t^{\psi_1},\cdots,t^{\psi_m})\mid t\in T\}$ where $\psi_i$, $\varphi_i$ are isomorphisms from $T$ to $T_i$. Then $H_\alpha\cap N$ is conjugate to $H_\beta\cap N$ by $g$. This means we can take $(\varphi_1^{-1}\psi_1,\cdots,\varphi_m^{-1}\psi_m)=\tilde{g}\in \Inn(N)$ on $H_\alpha\cap N$. Thus once $(\varphi_1,\cdots,\varphi_m)$ is given, we could let $\psi: T\to H_\alpha\cap N\to H_\beta\cap N$ be $(\psi_1,\cdots,\psi_m)=(\varphi_1,\cdots,\varphi_m)\tilde{g}=(\varphi_1\tilde{g_1},\cdots,\varphi_m \tilde{g_m})$.
 }
 
 
