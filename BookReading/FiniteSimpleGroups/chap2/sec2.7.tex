@@ -24,7 +24,50 @@
 
 \maintitle{Covering Groups}
 \subtitle{Schur Multiplier}
+
+$A_n$ as quotient group.
+
+preimage of $\pi\in A_n$
+
+$[]$ instead of ()
+
+\begin{definition}
+	$\tilde{G}$ is a \textit{covering group} of $G$ if $Z(\tilde{G})\leq \tilde{G}'$ and $\tilde{G}/Z(\tilde{G})\cong G$. 
+\end{definition}
+
+double, triple cover
+
+\begin{theorem}[Schur Theorem, \textit{universal cover}]
+	Every finite perfect group $G$ has a unique maximal covering group $\tilde{G}$, with the property that every other covering group is a quotient of $\tilde{G}$.
+\end{theorem}
+
+\begin{example}[non-perfect]
+	$\mathbb{Z}_2\times\mathbb{Z}_2=\langle\alpha\rangle\times\langle\beta\rangle$ has four maximal covering groups: one $Q_8$ and three $D_8$.
+
+    $Q_8=\{\pm 1,\pm i,\pm j,\pm k\}$, $Z(Q_8)=\{\pm 1\}$, $Q_8/Z(Q_8)\cong\mathbb{Z}_2\times\mathbb{Z}_2$.
+    
+    $D_8=\langle a\rangle:\langle b\rangle$,
+\end{example}
+
+% \href{https://math.stackexchange.com/questions/4242277/number-of-schur-covering-groups}{number of Schur covering groups}
+
+
+
 \subtitle{Double Covers of $A_n$ and $S_n$}
+
+Now we define $2.S_n$.
+
+Firstly, let $G$ be a set of order $2n!$, with a map $\varphi$ onto $S_n$ such that each $\pi\in S_n$ has exactly two preimages denoted as $+\pi$ and $-\pi$. 
+
+Intuitively, we should define the multiplication of $G$ as $+\pi+\sigma=+(\pi\sigma)$ and $+\pi-\sigma=-(\pi\sigma)$. 
+
+WLOG, we denote $+(1\ 2)$ as $[1\ 2]$ and $-(1\ 2)$ as $-[1\ 2]$. Then for each 2-cycle $\pi\in S_n$, taking $(+\pi)^{-1}$ to be a preimage of $\pi$, define the products (of 3 elements in $G$) $[i\ j]^{+\pi}$ and $[i\ j]^{-\pi}$ to be a same preimage of $(i^\pi\ j^\pi)$, we denote it as $-[i^\pi\ j^\pi]$. That is $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$. 
+
+Then define the preimage of $(a_i, a_{i+1},\cdots, a_j) by [a_i\ a_{i+1}][a_{i+1}\ a_{i+2}]\cdots[a_{j-1}\ a_j]=[a_i\ a_{i+1}][a_i\ a_{i+2}]\cdots[a_i\ a_j]$.
+
+
+
+
 \subtitle{Triple Covers of $A_6$ and $A_7$}
 
 
