@@ -25,28 +25,37 @@
 \maintitle{Covering Groups}
 \subtitle{Schur Multiplier}
 
-$A_n$ as quotient group.
+$A_n$ as quotient group of $2.A_n$.
 
-preimage of $\pi\in A_n$
+Let $+\pi$ and $-\pi$ be the two preimages of $\pi\in A_n$ under the natural quotient map. \textcolor{red}{But there is no canonical choice of which element gets which sign.}
 
-$[]$ instead of ()
+{\color{gray}
+Let $+1$ be the identity in $2.A_n$. For each $\pi\in A_n$, we define $+\pi$ to be the element which multipilied together with $+1$ gives itself, and $-\pi$ for the other one.
+}
 
 \begin{definition}
 	$\tilde{G}$ is a \textit{covering group} of $G$ if $Z(\tilde{G})\leq \tilde{G}'$ and $\tilde{G}/Z(\tilde{G})\cong G$. 
+
+    If $|Z(\tilde{G})|=2,3$, then the covering group is called double, triple cover.
 \end{definition}
 
-double, triple cover
-
-\begin{theorem}[Schur Theorem, \textit{universal cover}]
-	Every finite perfect group $G$ has a unique maximal covering group $\tilde{G}$, with the property that every other covering group is a quotient of $\tilde{G}$.
+\begin{theorem}[Schur]
+	Every finite perfect group $G$ has a unique maximal covering group $\tilde{G}$, with the property that every other covering group is a quotient of $\tilde{G}$. 
+    We call $\tilde{G}$ the \textbf{universal covering group} of $G$ and $Z(\tilde{G})$ the \textbf{Schur multiplier} of $G$, denoted as $M(G)$.
 \end{theorem}
 
 \begin{example}[non-perfect]
-	$\mathbb{Z}_2\times\mathbb{Z}_2=\langle\alpha\rangle\times\langle\beta\rangle$ has four maximal covering groups: one $Q_8$ and three $D_8$.
+	$\mathbb{Z}_2\times\mathbb{Z}_2=\langle\alpha\rangle\times\langle\beta\rangle$ has four maximal covering groups: one $Q_8$ and three $D_8$. 
 
     $Q_8=\{\pm 1,\pm i,\pm j,\pm k\}$, $Z(Q_8)=\{\pm 1\}$, $Q_8/Z(Q_8)\cong\mathbb{Z}_2\times\mathbb{Z}_2$.
     
-    $D_8=\langle a\rangle:\langle b\rangle$,
+    $D_8=\langle a\rangle:\langle b\rangle$, $Z(D_8)=\langle a^2\rangle$, $D_8/Z(D_8)=\langle Z(D_8)a\rangle\times \langle Z(D_8)ab\rangle \cong\mathbb{Z}_2\times\mathbb{Z}_2$.
+    
+    Only one of 3 different subgroups of $D_8/Z(D_8)$ could map to the normal subgroup $\langle a\rangle$ of $D_8$. Thus there are 3 different covering groups of $\mathbb{Z}_2\times\mathbb{Z}_2$. However, $Q_8$ has more symmetric structure coinciding with $\mathbb{Z}_2\times\mathbb{Z}_2$. 
+\end{example}
+
+\begin{example}
+    The alternating groups $A_n$ $(n > 4)$ only have double covers, except for $A_6$ and $A_7$ both with the same Schur multiplier $\mathbb{Z}_6$.
 \end{example}
 
 % \href{https://math.stackexchange.com/questions/4242277/number-of-schur-covering-groups}{number of Schur covering groups}
@@ -61,11 +70,17 @@ Firstly, let $G$ be a set of order $2n!$, with a map $\varphi$ onto $S_n$ such t
 
 Intuitively, we should define the multiplication of $G$ as $+\pi+\sigma=+(\pi\sigma)$ and $+\pi-\sigma=-(\pi\sigma)$. 
 
-WLOG, we denote $+(1\ 2)$ as $[1\ 2]$ and $-(1\ 2)$ as $-[1\ 2]$. Then for each 2-cycle $\pi\in S_n$, taking $(+\pi)^{-1}$ to be a preimage of $\pi$, define the products (of 3 elements in $G$) $[i\ j]^{+\pi}$ and $[i\ j]^{-\pi}$ to be a same preimage of $(i^\pi\ j^\pi)$, we denote it as $-[i^\pi\ j^\pi]$. That is $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$. 
+WLOG, we denote $+(1\ 2)$ as $[1\ 2]$ and $-(1\ 2)$ as $-[1\ 2]$. Then for each transposition $\pi\in S_n$, taking $(+\pi)^{-1}$ to be a preimage of $\pi$, define the products (of 3 elements in $G$) $[i\ j]^{+\pi}$ and $[i\ j]^{-\pi}$ to be a same preimage of $(i^\pi\ j^\pi)$, we denote it as $-[i^\pi\ j^\pi]$. That is $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$. 
 
-Then define the preimage of $(a_i, a_{i+1},\cdots, a_j) by [a_i\ a_{i+1}][a_{i+1}\ a_{i+2}]\cdots[a_{j-1}\ a_j]=[a_i\ a_{i+1}][a_i\ a_{i+2}]\cdots[a_i\ a_j]$.
+Then define the preimage of $(a_i, a_{i+1},\cdots, a_j)$ by \[[a_i\ a_{i+1}\ \cdots\ a_j]=[a_i\ a_{i+1}][a_i\ a_{i+2}]\cdots[a_i\ a_j].\]
 
+Finally by multiplying together disjoint cycles in the usual way, we obtain all elements.
 
+The multiplication defined above is well-defined. That is, if we compute the same product in two different ways, we get the same result. A proof using construction of double cover of orthogonal group is given in Section 3.9.
+
+Note that, by the rule $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$ to define $[i\ j]$'s, all the elements $\pm [i\ j]$ are conjugate. Thus they are all square to 1 or -1 simotaneously. If $(\pm[i\ j])^2=1$, then the elements like $\pm[1\ 2][3\ 4]$ square to -1. And vice versa. 
+
+Therefore, we obtain two distinct double cover of $S_n$. We denote $2.S_n^+$ (actually $\mathbb{Z}_2\times S_n$) as the one with $|[i\ j]|=2$ (where $(i\ j)$ is identified with a coset $Z(2.S_n)a$ with a of order 2), and $2.S_n^-$ as the other one with $|[i\ j]|=4$ ($(i\ j)$ a coset of an element of order 4). However, both of them has the same subgroup $2.A_n\cong \mathbb{Z}_2\times A_n$ of index 2, which is the unique double cover of $A_n$.
 
 
 \subtitle{Triple Covers of $A_6$ and $A_7$}
