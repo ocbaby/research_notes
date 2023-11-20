@@ -50,8 +50,9 @@ Let $+1$ be the identity in $2.A_n$. For each $\pi\in A_n$, we define $+\pi$ to 
     $Q_8=\{\pm 1,\pm i,\pm j,\pm k\}$, $Z(Q_8)=\{\pm 1\}$, $Q_8/Z(Q_8)\cong\mathbb{Z}_2\times\mathbb{Z}_2$.
     
     $D_8=\langle a\rangle:\langle b\rangle$, $Z(D_8)=\langle a^2\rangle$, $D_8/Z(D_8)=\langle Z(D_8)a\rangle\times \langle Z(D_8)ab\rangle \cong\mathbb{Z}_2\times\mathbb{Z}_2$.
-    
-    Only one of 3 different subgroups of $D_8/Z(D_8)$ could map to the normal subgroup $\langle a\rangle$ of $D_8$. Thus there are 3 different covering groups of $\mathbb{Z}_2\times\mathbb{Z}_2$. However, $Q_8$ has more symmetric structure coinciding with $\mathbb{Z}_2\times\mathbb{Z}_2$. 
+
+    see my iphone
+    % Only one of 3 different subgroups of $D_8/Z(D_8)$ could map to the normal subgroup $\langle a\rangle$ of $D_8$. Thus there are 3 different covering groups of $\mathbb{Z}_2\times\mathbb{Z}_2$. However, $Q_8$ has more symmetric structure coinciding with $\mathbb{Z}_2\times\mathbb{Z}_2$. 
 \end{example}
 
 \begin{example}
@@ -72,16 +73,25 @@ Intuitively, we should define the multiplication of $G$ as $+\pi+\sigma=+(\pi\si
 
 WLOG, we denote $+(1\ 2)$ as $[1\ 2]$ and $-(1\ 2)$ as $-[1\ 2]$. Then for each transposition $\pi\in S_n$, taking $(+\pi)^{-1}$ to be a preimage of $\pi$, define the products (of 3 elements in $G$) $[i\ j]^{+\pi}$ and $[i\ j]^{-\pi}$ to be a same preimage of $(i^\pi\ j^\pi)$, we denote it as $-[i^\pi\ j^\pi]$. That is $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$. 
 
-Then define the preimage of $(a_i, a_{i+1},\cdots, a_j)$ by \[[a_i\ a_{i+1}\ \cdots\ a_j]=[a_i\ a_{i+1}][a_i\ a_{i+2}]\cdots[a_i\ a_j].\]
+Then define the preimage $+(a_i, a_{i+1},\cdots, a_j)$ by \[[a_i\ a_{i+1}\ \cdots\ a_j]=[a_i\ a_{i+1}][a_i\ a_{i+2}]\cdots[a_i\ a_j].\]
 
 Finally by multiplying together disjoint cycles in the usual way, we obtain all elements.
 
 The multiplication defined above is well-defined. That is, if we compute the same product in two different ways, we get the same result. A proof using construction of double cover of orthogonal group is given in Section 3.9.
 
-Note that, by the rule $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$ to define $[i\ j]$'s, all the elements $\pm [i\ j]$ are conjugate. Thus they are all square to 1 or -1 simotaneously. If $(\pm[i\ j])^2=1$, then the elements like $\pm[1\ 2][3\ 4]$ square to -1. And vice versa. 
+Note that, by the rule $[i\ j]^{\pm\pi}=-[i^\pi\ j^\pi]$ to define $[i\ j]$'s, all the elements $\pm [i\ j]$ are conjugate. Thus they are all square to 1 or -1 simotaneously. Whatever, the elements like $\pm[1\ 2][3\ 4]$ always square to -1.  
 
 Therefore, we obtain two distinct double cover of $S_n$. We denote $2.S_n^+$ (actually $\mathbb{Z}_2\times S_n$) as the one with $|[i\ j]|=2$ (where $(i\ j)$ is identified with a coset $Z(2.S_n)a$ with a of order 2), and $2.S_n^-$ as the other one with $|[i\ j]|=4$ ($(i\ j)$ a coset of an element of order 4). However, both of them has the same subgroup $2.A_n\cong \mathbb{Z}_2\times A_n$ of index 2, which is the unique double cover of $A_n$.
 
+\begin{example}\ 
+
+    \begin{itemize}
+        \item $2.S_4^+\cong \mathbb{Z}_2\times S_4$ is the group of symmetries of the cube, where $S_4$ permutes the four diagonals of the cube, and $\mathbb{Z}_2$ permutes the two opposite vertices in a diagonal simotaneously.
+        \item $2.S_4^-\cong \mathrm{GL}_2(3)$ where $S_4$ permutes the four lines through the origin in $\mathbb{F}_3^2$, and $\mathbb{Z}_2$ (i.e. scalar matrices) permutes the two points on each line simotaneously.
+        
+        Note that $\mathrm{SL}(2,3)=2.A_4$ is the unique subgroup of order 24 in $\mathrm{GL}_2(3)$. 
+    \end{itemize}
+\end{example}
 
 \subtitle{Triple Covers of $A_6$ and $A_7$}
 
