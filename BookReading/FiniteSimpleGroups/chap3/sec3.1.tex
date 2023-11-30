@@ -1,0 +1,72 @@
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\ChapThreeSecOne\undefined % Compile separately
+    \documentclass[a4paper & 11pt]{article}
+    \input{../config} % common config
+
+    % additional config for this file
+    \def\maintitle#1{\section*{#1}}
+    \def\subtitle#1{\section{#1}}
+
+    \begin{document}
+
+\else % Compile as subfile
+    \ifx\chaptitle\undefined % Compile whole book
+        \def\maintitle#1{\subsection{#1}}
+        \def\subtitle#1{\subsubsection{#1}}
+    \else % Compile chapter
+        \def\maintitle#1{\section{#1}}
+        \def\subtitle#1{\subsection{#1}}
+    \fi
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maintitle{Introduction}
+
+'Classical' simple groups: linear groups, unitary groups,  symplectic groups, orthogonal groups.
+
+Mainly obtained by taking $G'/Z(G')$ from suitible matrix groups $G$.
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lllll}
+        Definition &
+        Simplicity & 
+        Subgroups & 
+        Automorphisms \& Covering groups & 
+        Isomorphisms \\
+        \hline
+        $PSL_n(q)$ &
+        Iwasawa's lemma &
+        geometry &
+        (briefly mentioned) &
+        projective spaces \\
+    \end{tabular}
+\end{table}
+
+Symplectic groups: easy to understand, orders, simplicity, subgroups, covering groups, automorphisms, generic isomorphism $\mathrm{Sp}_2(q)\cong\mathrm{SL}_2(q)$, exceptional isomorphism $\mathrm{Sp}_4(2)\cong S_6$.
+
+Unitary groups: similar to symplectic groups.
+
+Orthogonal groups:\vspace{-3mm}
+\begin{itemize}[itemsep=0pt]
+    \item fundamental differences between the cases of $\mathrm{char}{F}=2$ or odd
+    \item subquotient is not usually simple
+    \item to get usually simple groups, using spinor norm for odd char (see Clifford algebras and spin groups), and quasideterminant for char 2
+    \item generic isomorphisms $\PO_6^+(q)\cong \PSL_4(q)$, $\PO_6^-(q)\cong\PSU_4(q)$, $\PO_5(q)\cong\PSp_4(q)$ all derive from the Klein correspondence
+\end{itemize}
+
+A simple version of Aschbacher-Dynkin theorem is proved, relying heavily on representation theory.
+
+More explicit versions for individual classes of groups see Kleidman and Liebeck's book.
+
+Some exceptional behavior of small classical groups is related to exceptional Weyl groups.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapThreeSecOne\undefined % Compile separately
+     %\bibliography{abcd}
+     \end{document}
+\fi

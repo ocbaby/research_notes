@@ -1,0 +1,69 @@
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\ChapThreeSecOne\undefined % Compile separately
+    \documentclass[a4paper,11pt]{article}
+    \input{../config} % common config
+
+    % additional config for this file
+    \def\maintitle#1{\section*{#1}}
+    \def\subtitle#1{\section{#1}}
+
+
+    \begin{document}
+
+\else % Compile as subfile
+    \ifx\chaptitle\undefined % Compile whole book
+        \def\maintitle#1{\subsection{#1}}
+        \def\subtitle#1{\subsubsection{#1}}
+    \else % Compile chapter
+        \def\maintitle#1{\section{#1}}
+        \def\subtitle#1{\subsection{#1}}
+    \fi
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maintitle{Finite fields}
+
+\textcolor{red}{TODO: ref to Hua and Peter's notes}
+
+\begin{definition}
+    field $+,\cdot$
+\end{definition}
+
+\begin{lemma}
+    all non-zero elts have the same + order.
+\end{lemma}
+\begin{proof}
+    exercise
+\end{proof}
+
+\begin{definition}
+    characteristic, prime subfield
+\end{definition}
+
+\begin{lemma}
+    $|F|=p^d$
+\end{lemma} 
+\begin{proof}
+    $F$ is a vector space over $F_0$.
+\end{proof}
+
+\begin{lemma}
+    $F^\times$ is cyclic.
+\end{lemma}
+
+\begin{proposition}
+    $\forall$ prime $p$ and $d\in\mathbb{N}_+$, $\exists_1 F$ of order $p^d$, denoted as $\mathbb{F}_{p^d}$. 
+\end{proposition}
+
+\begin{lemma}
+    $\Aut(\mathbb{F}_{p^d})\cong\mathbb{Z}_d$.
+\end{lemma}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapThreeSecOne\undefined % Compile separately
+     %\bibliography{abcd}
+     \end{document}
+\fi

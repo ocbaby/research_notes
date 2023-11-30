@@ -1,0 +1,35 @@
+% '\def\SubfileName{}' is needed before include or input this file
+% Change 'SubfileName' to the name of the subfile.
+
+\ifx\ChapThreeSecThree\undefined % Compile separately
+    \documentclass[a4paper,11pt]{article}
+    \input{../config} % common config
+
+    % additional config for this file
+    \def\maintitle#1{\section*{#1}}
+    \def\subtitle#1{\section{#1}}
+
+    \begin{document}
+
+\else % Compile as subfile
+    \ifx\chaptitle\undefined % Compile whole book
+        \def\maintitle#1{\subsection{#1}}
+        \def\subtitle#1{\subsubsection{#1}}
+    \else % Compile chapter
+        \def\maintitle#1{\section{#1}}
+        \def\subtitle#1{\subsection{#1}}
+    \fi
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maintitle{General linear groups}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\ChapThreeSecThree\undefined % Compile separately
+     %\bibliography{abcd}
+     \end{document}
+\fi

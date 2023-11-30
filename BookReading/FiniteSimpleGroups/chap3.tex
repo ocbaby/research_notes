@@ -1,0 +1,37 @@
+% '\def\ChapThree{}' is needed before include or input this file
+\ifx\ChapThree\undefined % Compile separately
+    \documentclass[a4paper,11pt]{article}
+    \input{config}
+
+    % additional config for this file
+    \def\maintitle#1{\section*{#1}}
+    \def\chaptitle{}
+    % \def\subtitle#1{\section#1}
+
+    \begin{document}
+
+\else % Compile as subfile
+    \def\maintitle#1{\section{#1}}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\maintitle{The Classical Groups}
+
+
+\def\ChapThreeSecOne{Chapter 3 section 1 is defined.}
+\input{chap3/sec3.1.tex}
+
+\def\ChapThreeSecTwo{Chapter 3 section 2 is defined.}
+\input{chap3/sec3.2.tex}
+
+\def\ChapThreeSecThree{Chapter 3 section 3 is defined.}
+\input{chap3/sec3.3.tex}
+
+
+
+
+\ifx\ChapThree\undefined % Compile separately
+     %\bibliography{abcd}
+     \end{document}
+\fi
