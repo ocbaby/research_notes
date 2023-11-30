@@ -19,3 +19,4 @@
 .log
 .fdb_latexmk
 .synctex.gz
+*.gz
