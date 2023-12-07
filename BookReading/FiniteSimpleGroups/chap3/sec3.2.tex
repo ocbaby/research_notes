@@ -25,21 +25,21 @@
 
 \maintitle{Finite fields}
 
-\textcolor{red}{TODO: ref to Hua and Peter's notes}
+\textcolor{red}{Please refer to literatures about finite fields for more details.}
 
 \begin{definition}
-    field $+,\cdot$
+    field $(F,+,\cdot)$
 \end{definition}
 
 \begin{lemma}
-    all non-zero elts have the same + order.
+    All non-zero elements have the same additional order of prime $p$.
 \end{lemma}
 \begin{proof}
-    exercise
+    $F^\times\curvearrowright F^+\backslash\{0\}$ by multiplication as group automorphism (distributive law) transitively.
 \end{proof}
 
 \begin{definition}
-    characteristic, prime subfield
+    The $p$ above is the \textbf{characteristic} of $F$. $F_0:=\langle 1\rangle_+$ is the \textbf{prime subfield} of $F$.
 \end{definition}
 
 \begin{lemma}
@@ -50,15 +50,23 @@
 \end{proof}
 
 \begin{lemma}
-    $F^\times$ is cyclic.
+    $F^\times=\langle \sigma\rangle\cong\mathbb{Z}_{p^d-1}$, where $\sigma$ is called a \textbf{Singer cycle}.
 \end{lemma}
+\begin{proof}
+    By Vandermonde's lemma, polynomial of degree $n$ on $F$ has at most $n$ solutions in $F$. $e:=\mathrm{exp}(F^\times)<|F^\times|\implies x^e-1=0$ has $|F^\times|>e$ solutions.
+\end{proof}
 
 \begin{proposition}
-    $\forall$ prime $p$ and $d\in\mathbb{N}_+$, $\exists_1 F$ of order $p^d$, denoted as $\mathbb{F}_{p^d}$. 
+    For any prime power $q=p^d$, $\exists_1 F$ of order $q$ up to field isomorphism, says $\mathbb{F}_q$. 
 \end{proposition}
+\begin{proof}
+    Existance: $\mathbb{Z}/p\mathbb{Z}[x]/(f(x))$ for any irreducible polynomial $f(x)$ of degree $d$.
+
+    Uniqueness: If $|F|=p^d$, then $F_0\cong \mathbb{F}_p$,  $F$ is the splitting field of $x^{p^d}-x$ over $F_0$, $F^\times=\langle x\rangle$. 
+\end{proof}
 
 \begin{lemma}
-    $\Aut(\mathbb{F}_{p^d})\cong\mathbb{Z}_d$.
+    $\Aut(\mathbb{F}_q)=\langle \phi\rangle\cong\mathbb{Z}_d$, where $\phi:x\mapsto x^p$ is called the \textbf{Frobenius automorphism}.
 \end{lemma}
 
 

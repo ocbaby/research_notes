@@ -28,6 +28,27 @@
 
 
 
+\begin{lemma}[Iwasawa]
+    If finite group $G$ satisfies the following conditions, then $G$ is simple.
+    \begin{enumerate}[itemsep=0pt,label=\roman*.]
+        \item $G'=G$;
+        \item $G$ is primitive on some set $\Omega$;
+        \item $\exists A\trianglelefteq G_\alpha$ such that $A$ is solvable;
+        \item $G=A^G$.
+    \end{enumerate}
+    i.e. A perfect primitive group G, being the normal
+    closure of an abelian normal subgroup A of its point stabilizer, is simple.
+\end{lemma}
+\begin{proof}
+    Suppose that $1\neq N\trianglelefteq G$. Then, by primitivity, $N$ is transitive on $\Omega$ and hence $G=G_\alpha N$. For any $g\in G$, $g=hn$ for some $h\in G_\alpha$ and $n\in N$. 
+    
+    Then $a^g=a^{hn}=a^n$, $\forall a\in A$, since $A\trianglelefteq G_\alpha$. Moreover, $a^n=a(n^{-1})^{a}n\in AN$ since $N\trianglelefteq G$. Thus $G=A^G= AN$.
+
+    Now, $G/N=AN/N=A/(A\cap N)$ is solvable. Meanwhile, $(G/N)'=G'N/N=GN/N=G/N$. Thus $G/N=1$ and $G=N$, $G$ is simple.
+\end{proof}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%
 \ifx\ChapThreeSecThree\undefined % Compile separately
      %\bibliography{abcd}
