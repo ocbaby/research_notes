@@ -22,10 +22,168 @@
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\maintitle{General linear groups}
+\maintitle{Linear groups}
+
+Generally speaking, the classification of a certain kind of algebraic objects goes through four steps: extracting abstract concept from various examples, accumulating natural and classical families, organizing by analysis on generic properties and finally collecting sporadic cases. 
+
+As for finite simple groups, the motivation comes from Jordan-Holder theorem, since which simple groups are deemed as elementary bricks. The families of cyclic groups and alternating groups gives the very first examples. After that, mathematicians find that there are many finite simple groups of Lie type, which stem from the study of Lie algebras. Actually, such groups forms a quite large family which turns out to be the main part of the classification and is divided into classical and exceptional parts during processing. The sporadic groups are the last part, which are found case-by-case.
+
+In this chapter, we will introduce the family of linear groups, which is the basic case of groups of Lie type, since others can be seem as stabilizers of certain structures on vector spaces.
+
+\subtitle{Introduction}
+
+definition, order, action, corelation
+
+The story begins with the automorphisms of linear spaces, similar to the case of symmetric groups on sets.
+\begin{definition}
+    The so called \textbf{general linear group} $\GL(n,q)$ is the group of  all invertible linear transformations over vector space $V=\mathbb{F}_q^n$, or equivalently, all invertible $n\times n$ matrices over $\mathbb{F}_q$.
+\end{definition}
+
+Since linear group can be defined from two ways, algebraic (A) / geometric (G), there is also two parallel ways to deal with problems of linear groups. 
+Here we follow the geometric way.
+
+\begin{example}
+    $\GL_2(2)\cong S_3$, $\GL_2(3)\cong 2.S_4$.
+\end{example}
+
+\begin{remark}
+    $\GL_n(q)$ acts regularly on ordered basis of $V$. \\Thus
+    $|\GL(n,q)|=(q^n-1)(q^n-q)\cdots(q^n-q^{n-1})=q^{n(n-1)/2}(q-1)\cdots(q^n-1)$.
+\end{remark}
+
+\begin{corollary}
+    $\AGL_n(q)$ acts 2-transitively on $\mathbb{F}_q^n$. $\AGL_n(2)$ acts 3-transitively on $\mathbb{F}_2^n$. 
+\end{corollary}
+\begin{proof}
+    Note that for any two non-zero vectors $u,v\in\mathbb{F}_2^n$, $u,v$ are linear dependent iff. $u=v$. Thus $\GL_n(2)$ is 2-transitive on $V$.
+\end{proof}
+
+However, the simple groups do not come out from $\GL(n,q)$ directly. But we have some clues.
+
+\begin{proposition}
+    A finite non-abelian simple group is perfect and center-free.
+\end{proposition}
+
+Generally, $\GL_n(q)$ is neither perfect nor center-free. Since perfection is inherited when taking quotient, we try to do two things: taking derived subgroup till perfect and then moduling center till center-free. This could lead to some simple groups.
+
+Firstly, we need to find the derived subgroup of $\GL_n(q)$. Note that commutators in $\GL_n(q)$ are of the form $[A,B]=ABA^{-1}B^{-1}$, which has determinant 1. Hence we can restrict our scope to a subgroup.
+
+\begin{definition}
+    Consider the group homomorphism $\mathrm{det}:\GL_n(q)\to \mathbb{F}_q^\times$, $g\mapsto \lambda_1\cdots\lambda_n$, its kernel is denoted as $\SL_n(q)$, named \textbf{special linear group}.
+\end{definition}
+
+\begin{remark}
+    $|\SL_n(q)|=|\GL_n(q)|/|\mathbb{F}_q^\times|=q^{n(n-1)/2}(q^2-1)\cdots(q^n-1)$.
+\end{remark}
+
+Similar as $S_n$, $A_n$ has basic generators 2-cycles, 3-cycles resp. with the most fixed points, we look at a $\tau\in \GL(V)$ which fixes a hyperplane $W$ point-wise. Suppose $V=W\oplus\langle v\rangle$. Then 
+
+\begin{definition}
+\begin{equation*}
+    v^\tau=\begin{cases}
+    \alpha v \text{ for }\alpha\in F\backslash\{0,1\}, & \tau\text{ is called a \textbf{dilatation} or a \textbf{homology} (in projective version).}\\
+    v+w \text{ for } w\in W\backslash \{0\}, & \tau\text{ is called a \textbf{transvection} or an \textbf{elation} (in projective version).}\\
+    \alpha v+w \text{ for }\alpha\in F\backslash\{0,1\}, w\in W, & u:=v+(a-1)^{-1}w \text{ then reduce to the first case.}
+    \end{cases}
+\end{equation*}
+A transvection is denoted by $\tau(w,\varphi)$ where $\varphi\in V^*\backslash \{0\}$ with $W=\ker \varphi$.
+\end{definition}
+
+\begin{lemma}[properties of transvections]\ 
+    \begin{enumerate}
+        \item $\tau\in \SL$;
+        \item $\tau(\alpha w,\varphi)=\tau(w,\alpha\varphi)$;
+        \item $\tau(w_1,\varphi)\tau(w_2,\varphi)=\tau(w_1+w_2,\varphi)$;
+        \item $\tau(w,\varphi_1)\tau(w,\varphi_2)=\tau(w,\varphi_1+\varphi_2)$;
+        \item $(\tau(w,\varphi))^g=\tau(w^g,\varphi\circ g)$, $\forall g\in \GL$;
+        \item all transvections are conjugate in $\GL_{n\geq 2}(q)$ and $\SL_{n\geq 3}(q)$ by adjusting images in $\ker\varphi_2\backslash\langle w_2\rangle$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{lemma}\label{abelian normal subgroup}
+    $T_w:=\{\tau(w,\varphi)\mid \varphi\in V^*, \varphi(w)=0\}$ is an abelian normal subgroup of $(\SL_n(q))_w$.
+\end{lemma}
+
+\begin{lemma}\label{generating}\ 
+    \begin{enumerate}[itemsep=0pt,label=\roman*.]
+        \item The transvections (elations) generate $\SL$ $(\PSL)$.
+        \item The transvections (elations) together with dilatations (homologies) generate $\GL$ $(\PGL)$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Let $T$ be the group generated by transvections. Obviously, $T\leq \SL$. \\If $n=1$, then $T=1=\SL_1(q)$. Suppose $n\geq 2$ and $V=W\oplus\langle v\rangle$. \\
+    Then $\forall \rho\in\SL_n(q)$, $\exists \tau_1\in T$ s.t. $v^{\rho \tau_1}=v^{\rho}+(v-v^{\rho})=v\not\in  W^{\rho\tau_1}\cup W$. \\
+    Then $\exists \tau_2$ s.t. $v^{\rho \tau_1\tau_2}=v$ and $W^{\rho \tau_1\tau_2}=W$. (fixing $W^{\rho\tau_1}\cap W$, $v^{\rho \tau_1}$ and taking $W^{\rho \tau_1}$ to $W$)\\
+    Now $(\rho\tau_1\tau_2)|_W\in\SL(W)$ is a product of transvections on $W$.\\
+    Expanding them to transvections on $V$ we can express $\rho$ as product of transvections.
+\end{proof}
+
+\begin{lemma}\label{perfectness}
+    $\GL_n(q)'=\SL_n(q)=\SL_n(q)'$ except for $\SL_2(2)\cong S_3$, $\SL_2(3)'\cong Q_8$.
+\end{lemma}
+\begin{proof}
+    Since $\SL'\leq \GL'\leq \SL$, we only need to prove $\SL_n(q)\leq \SL_n(q)'$. \\
+    It is sufficient to show that a transvection is a commutator then conjugate in $\SL_n(q)$. \\
+    For $n\geq 3$, $\tau(w^g-w,\varphi)=\tau(-w,f)g^{-1}\tau(w,f)g=[\tau(w,\varphi),g]$.\\
+    For $n=2$ and $q\geq 4$, take $V=\langle u,v\rangle$, $\tau:u\mapsto u$, $v\mapsto u+v$, $g=\mathrm{diag}(a,a^{-1})$, $a\in F\backslash\{0,1\}$. \\
+    Then $\tau((1-a^2)u,-\varphi)=[\tau(u,\varphi),g]$.\\
+    Exceptions: $\GL_2(2)=\SL_2(2)$, $\GL_2(3)\cong 2.S_4\cong Q_8:S_3$.
+\end{proof}
+
+Now we consider the center. By linear algebra, $Z:=Z(\GL(n,q))$ consists of all scalar matrices and isomorphic to $\mathbb{F}_q^\times$. And $Z(\SL(n,q))\leq Z$ for the same reason.(Consider $C_{\GL_n(q)}(\{ I+E_{ij}|i\neq j\})$.) Taking quotient we get \textbf{projective general linear groups} $\PGL_n(q):=\GL_n(q)/Z$ and \textbf{projective special linear groups} $\PSL_n(q):=\SL_n(q)/(Z\cap\SL_n(q))$. By definition, $\PSL_n(q)$ is not a subgroup but is isomorphic to a normal subgroup of $\PGL_n(q)$.
+
+\begin{remark}
+    $|\PGL_n(q)|=|\GL_n(q)|/|\mathbb{F}_q^\times|=q^{n(n-1)/2}(q^2-1)\cdots(q^n-1)$.
+
+    $|\PSL_n(q)|=|\SL_n(q)|/|Z\cap \SL_n(q)|=\frac{1}{(n,q-1)}q^{n(n-1)/2}(q^2-1)\cdots(q^n-1)$.
+\end{remark}
+
+\begin{remark}
+    For $(n,q)\neq (2,2),(2,3)$, $\SL$ is perfect and hence a covering group of $\PSL$. However, if $q-1>(n,q-1)$, then $Z\not\subseteq \GL'\leq \SL$ and hence $\GL$ is not a covering group of $\PGL$.
+\end{remark}
+
+\begin{proposition}
+    $\SL\cong \PGL \iff (n,q-1)=1$, $\GL=\SL\cong\PGL\cong\PSL \iff q=2$.
+\end{proposition}
+
+Now we introduce some actions of linear groups.
+
+\begin{definition}
+    The \textbf{projective geometry} of $V=\mathbb{F}_q^n$ is the set of all 1-dimensional subspaces of $V$, denoted as $\PG(n-1,q)$.
+\end{definition}
+
+\begin{proposition}
+    $\GL_n(q)$ acts transitively on $\PG(n-1,q)$ with kernel $Z(\GL_n(q))$. Thus $\PGL_n(q)$ acts faithfully transitively on $\PG(n-1,q)$. 
+\end{proposition}
+
+
+\begin{proposition}
+    $\PGL_n(q)$ acts regularly on \textbf{frames} of $\PG(n-1,q)$, the set of all $(n+1)$-tuples on $\PG(n-1,q)$ with the property that no $n$ points lie in a hyperplane.
+\end{proposition}
+
+\begin{corollary}
+    $\PGL_2(q)$ is sharply 3-transitive on $\PG(1,q)$, while $\PGL_{n>2}(q)$ is only 2-transitive on $\PG(n-1,q)$. 
+\end{corollary}
+\begin{proof}
+    Any three distinct points in $\PG(1,q)$ form a frame. \\However, three distinct points in $\PG(n-1, q)$ with $n > 2$ might be collinear or not.
+\end{proof}
+
+\begin{remark}
+    Explict action of $\PGL_2(q)$ on $\PG(1,q)$ by \textbf{linear fractional representation}.
+\end{remark}
+
+\begin{corollary}\label{primitive action}
+    $\PSL_n(q)$ acts 2-transitively on $\PG(n-1,q)$ by suitibly choosing images to adjust the determinant to be 1.
+\end{corollary}
+
+\begin{theorem}[Fundamental Theorem of Projective Geometry]
+    $\Aut(\PG(n-1,q))=\PGammaL(n,q)$. 
+\end{theorem}
 
 
 
+\subtitle{Simplicity of $\PSL_n(q)$}
 
 
 \begin{lemma}[Iwasawa]
@@ -33,7 +191,7 @@
     \begin{enumerate}[itemsep=0pt,label=\roman*.]
         \item $G'=G$;
         \item $G$ is primitive on some set $\Omega$;
-        \item $\exists A\trianglelefteq G_\alpha$ such that $A$ is solvable;
+        \item $\exists A\trianglelefteq G_\alpha$ where $A$ is solvable;
         \item $G=A^G$.
     \end{enumerate}
     i.e. A perfect primitive group G, being the normal
@@ -43,9 +201,44 @@
     Suppose that $1\neq N\trianglelefteq G$. Then, by primitivity, $N$ is transitive on $\Omega$ and hence $G=G_\alpha N$. For any $g\in G$, $g=hn$ for some $h\in G_\alpha$ and $n\in N$. 
     
     Then $a^g=a^{hn}=a^n$, $\forall a\in A$, since $A\trianglelefteq G_\alpha$. Moreover, $a^n=a(n^{-1})^{a}n\in AN$ since $N\trianglelefteq G$. Thus $G=A^G= AN$.
-
+    
     Now, $G/N=AN/N=A/(A\cap N)$ is solvable. Meanwhile, $(G/N)'=G'N/N=GN/N=G/N$. Thus $G/N=1$ and $G=N$, $G$ is simple.
 \end{proof}
+
+\begin{theorem}
+    $\PSL_n(q)$ is a simple group except for $\PSL_2(2)$ and $\PSL_2(3)$.
+\end{theorem}
+
+The proof proceeds along Iwasawa's lemma. We have check the four conditions.
+\begin{enumerate}[itemsep=0pt,label=\roman*.]
+    \item Find a primitive action of $G$; \ref{primitive action}
+    \item Prove perfectness; \ref{perfectness}
+    \item Find a solvable normal subgroup $A$ of point stabilizer; \ref{abelian normal subgroup}
+    \item Prove $G=A^G$. \ref{generating}
+\end{enumerate}
+
+
+
+
+\subtitle{Generic properties}
+
+subgroups and automorphisms
+
+\begin{definition}
+    flag
+\end{definition}
+
+BN-pair
+
+\begin{proposition}
+    A maximal parabolic subgroup is a maximal subgroup.
+\end{proposition}
+
+
+\subtitle{Sporadic behaviours}
+
+isomorphism relations, permutation representations, covering groups, conterexample given by $L_2(q)$
+
 
 
 
