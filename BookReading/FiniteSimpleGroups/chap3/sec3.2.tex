@@ -25,7 +25,7 @@
 
 \maintitle{Finite fields}
 
-\textcolor{red}{Please refer to literatures about finite fields for more details.}
+Please refer to literatures about finite fields for more details.
 
 \begin{definition}
     field $(F,+,\cdot)$
@@ -50,11 +50,15 @@
 \end{proof}
 
 \begin{lemma}
-    $F^\times=\langle \sigma\rangle\cong\mathbb{Z}_{p^d-1}$, where $\sigma$ is called a \textbf{Singer cycle}.
+    $F^\times=\langle \sigma\rangle\cong\mathbb{Z}_{p^d-1}$, where $\sigma$ induces  a \textbf{Singer cycle} $v\mapsto v\sigma$ on $V=F=F_0^d$.
 \end{lemma}
 \begin{proof}
     By Vandermonde's lemma, polynomial of degree $n$ on $F$ has at most $n$ solutions in $F$. $e:=\mathrm{exp}(F^\times)<|F^\times|\implies x^e-1=0$ has $|F^\times|>e$ solutions.
 \end{proof}
+
+\begin{proposition}
+    Elements of order $p^d-1$ in $\GL(V)$ are conjugate.
+\end{proposition}
 
 \begin{proposition}
     For any prime power $q=p^d$, $\exists_1 F$ of order $q$ up to field isomorphism, says $\mathbb{F}_q$. 
@@ -69,13 +73,13 @@
     $\Aut(\mathbb{F}_q)=\langle \phi\rangle\cong\mathbb{Z}_d$, where $\phi:x\mapsto x^p$ is called the \textbf{Frobenius automorphism}.
 \end{lemma}
 
-\begin{remark}
-    $\phi$ may not be a linear transformation on $\mathbb{F}_q^n$ since it may not preserve scalar multiplication.
-\end{remark}
+% \begin{remark}
+%     $\phi$ may not be a linear transformation on $\mathbb{F}_q^n$ since it may not preserve scalar multiplication.
+% \end{remark}
 
-\begin{definition}
-    $\GammaL_n(q):=\GL_n(q)\rtimes\langle \phi\rangle$ and $\SigmaL_n(q):=\SL_n(q)\rtimes\langle \phi\rangle$
-\end{definition}
+% \begin{definition}
+%     $\GammaL_n(q):=\GL_n(q)\rtimes\langle \phi\rangle$ and $\SigmaL_n(q):=\SL_n(q)\rtimes\langle \phi\rangle$
+% \end{definition}
 
 \begin{lemma}
     $x^n=1$ has $(n,q-1)$ solutions in $\mathbb{F}_q$.
