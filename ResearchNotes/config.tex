@@ -1,21 +1,19 @@
 
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{enumerate}
-\usepackage{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{color}
+%\usepackage{etex}
+\usepackage[backend=bibtex]{biblatex}
 
-\geometry{
-  paper=a4paper,
-  margin=64pt,
-  %includeheadfoot
-}
+
 
 
 \newtheorem{theorem}{Theorem}[theorem]
@@ -23,6 +21,7 @@
 \newtheorem{proposition}{Proposition}[theorem]
 \newtheorem{lemma}{Lemma}[theorem]
 \newtheorem{conjecture}{Conjecture}[theorem]
+\newtheorem{problem}{Problem}[theorem]
 \newtheorem{definition}{Definition}[theorem]
 \newtheorem{example}{Example}[theorem]
 \newtheorem{remark}{Remark}[theorem]
@@ -38,4 +37,4 @@
 \def\Inn{\mathrm{Inn}}
 \def\Out{\mathrm{Out}}
 \def\Cay{\mathrm{Cay}}
-
+\def\NC{\mathcal{NC}}

@@ -65,7 +65,7 @@ paper-two
 \end{theorem}
 
 \begin{conjecture}[Xu, 1998]
-	Almost all Cayley graphs are normal.
+	Almost all Cayley graphs are normal: $\hat{G}\trianglelefteq\Aut(\Gamma)=N_{\Aut\Gamma}(\hat{G})$.
 \end{conjecture}
 
 
@@ -73,8 +73,12 @@ paper-two
 	If $\Aut(G,S)$ is s-transitive on $S$, then $\Gamma$ is $(N_{\Aut\Gamma}(\hat{G}),s)$-arc-transitive.
 \end{lemma}
 
+\begin{definition}
+	A Cayley graph $\Gamma=\Cay(G,S)$ is called \textbf{normal edge-transitive} if $N_{\Aut(\Gamma)}(\hat{G})$ is transitive on $E\Gamma$
+\end{definition}
+
 \begin{theorem}[Praeger,1999]
-	cubic normalizer-arc-transitive $\Cay(G,S)$ on nonab. simple $G=T$ satisfies $\Aut\Gamma=\hat{G}\rtimes \Aut(G,S)$
+	cubic normal edge-transitive $\Cay(G,S)$ on nonabelian simple $G=T$ satisfies $\Aut\Gamma=\hat{G}\rtimes \Aut(G,S)$
 \end{theorem}
 
 \begin{theorem}[Li,1998]
@@ -119,6 +123,8 @@ Extended to bi-Cayley with same condition, while focus on bipartite
 Extended to bi-Cayley of bi-quasiprimitive instead of solvable stabilizer
 
 
+s-arc-transitive Cayley graph is locally primitive.
+
 \begin{problem}[*]
 	Study arc-transitive bi-quasiprimitive bi-Cayley graphs on T of val=pq or $p^e$
 \end{problem}
@@ -162,9 +168,9 @@ Else both non-solvable, use Li-Wang-Xia.
 \end{problem}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\section{Weiss's Conjecture}
+\section{s-arc-transitive locally primitive graphs}
 
-\begin{conjecture}
+\begin{conjecture}[Weiss's Conjecture]
 	Suppose $\Gamma = (V, E)$ is a finite undirected graph, $G\leq \Aut\Gamma$ such that G
 is vertex-transitive and locally primitive. Then $|G_x|$ is bounded by a number depending only on $|\Gamma(x)|$.
 \end{conjecture}
